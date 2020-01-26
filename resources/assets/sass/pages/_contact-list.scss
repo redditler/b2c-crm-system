@@ -1,0 +1,276 @@
+.content__wrapper[data-id='contact-list']{
+      @include block-style(flex, space-between, flex-start);
+      position: relative;
+      flex-wrap: wrap;
+
+      .filters_list{
+            width: 57%;
+            height: 200px;
+            @include block-style(flex, space-between, center);
+            flex-wrap: wrap;
+            padding: 25px 55px 50px;
+
+            &::before{
+                  content: "Фильтры";
+                  position: absolute;
+                  position: absolute;
+                  bottom: -14px;
+                  right: 20px;
+                  font-size: 90px;
+                  font-weight: 1000;
+                  color: #c0cdcfba;
+                  margin: 0;
+            } 
+            &::after{
+                  display: none;
+            }
+            .list__item{
+                  width: 45%;
+                  background: white;
+                  height: 30px;
+                  border-radius: 50px;
+                  box-shadow: 2px 2px 4px -2px black;
+                  position: relative;
+
+                  .filter__wrapper{
+                        width: 100%;
+                        height: 100%;
+
+                        .btn-group{
+                              width: 100%;
+                              height: 100%;
+
+                              button{
+                                    background: transparent;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: none;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding: 0 14px;
+                                    color: #9CA1A2;
+                                    font-weight: 500;
+
+                                    &:active, &:focus, &:hover{
+                                          outline: none;
+                                          box-shadow: none;
+                                    }
+
+                                    b{
+                                          position: relative;
+
+                                          &::before{
+                                                content: "";
+                                                position: absolute;
+                                                height: 30px;
+                                                border-left: 1px solid;
+                                                top: -17px;
+                                                left: -12px;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+
+                  &.filter__date{
+                        .filter__wrapper{
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              width: 100%;
+                              height: 30px;
+                        }
+                        .date__input{
+                              width: 40%;
+                              height: 100%;
+                              border: none;
+                              border-left: 1px solid #9CA1A2;
+                              padding: 0 10px;
+                              border-radius: 0 50px 50px 0;
+
+                              &:active, &:focus, &:hover{
+                                    outline: none;
+                                    box-shadow: none;
+                              }
+                        }
+                        .filter__date-title{
+                              width: 10%;
+                              text-align: center;
+                              height: 100%;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border-left: 1px solid #9CA1A2;
+
+                              &:first-child{
+                                    border-left: none;
+                              }
+                        }
+                  }
+            }
+      }
+
+      .eptic-content{
+            width: 40%;
+            height: 200px;
+            background: linear-gradient(45deg, rgba(221, 221, 221, 0.46), rgba(255, 255, 255, 0.3)), url(/img/living-tape/small_bg.png) round;
+      }
+
+      .card-list{
+            width: 100%;
+            padding: 40px 20px 60px;
+
+            #cardList{
+                  @include block-style(flex, space-between, flex-start);
+                  flex-wrap: wrap;
+                  padding: 0 20px;
+            }
+      }
+
+      .card{
+            border: 5px solid white;
+            height: 210px;
+            width: 285px;
+            margin-bottom: 40px;
+            background: url(/img/texture.png) no-repeat;
+            background-size: cover;
+            border-radius: 13px;
+            padding: 10px 15px;
+            box-shadow: 1px 1px 5px -1px black;
+            position: relative;
+            .card__header{
+                  height: 20px;
+
+                  .card__create-date{
+                        @include text-style(14px, 500, #2B353E);
+                  }
+            }
+
+            .card__body{
+                  display: flex;
+                  flex-wrap: wrap;
+
+
+                  .card__contact-info{
+                        width: 100%;
+                        height: 90px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        position: relative;
+                        margin-top: 5px;
+
+                        .contact-info__row{
+                              position: relative;
+                              height: 20px;
+                              overflow: hidden;
+
+                              img{
+                                    position: absolute;
+                                    top: 5px;
+                              }
+
+                              .contact__value{
+                                    margin-left: 30px;
+                                    @include text-style(15px, 500, #2B353E);
+                              }
+                        }
+
+                        &::before{
+                              content: "";
+                              position: absolute;
+                              height: 85%;
+                              border-left: 1px solid #2B353E;
+                              left: 20px;
+                        }
+                  }
+
+                  .card__status-info{
+                        width: 60%;
+                        margin-top: 10px;
+
+                        .statusbar{
+                              width: 140px;
+                              display: flex;
+                              flex-direction: column;
+                              height: 35px;
+                              border: 1px solid #85969A;
+                              border-radius: 6px;
+
+                              .statusbar__header{
+                                    height: 25px;
+                                    border-bottom: 1px solid #85969A;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                              }
+
+                              .statusbar__footer{
+                                    height: 10px;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    border-radius: 0 0 5px 5px;
+                                    overflow: hidden;
+
+                                    div{
+                                          flex-grow: 1;
+                                          border-right: 1px solid #85969A;
+                              
+                                          &:last-child{
+                                                border: none;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+
+                  .card__quality-info{
+                        width: 40%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 10px;
+                        position: relative;
+
+                        .quality__value{
+                              @include text-style(36px, 500, #2B353E);
+                              position: absolute;
+                              bottom: -5px;
+                        }
+
+                        &.default{
+                              .quality__value{
+                                    position: unset;
+                                    @include text-style(12px, 500, #2B353E);
+                              }
+                        }
+                  }
+            }
+
+            .card__footer{
+                  width: 100%;
+                  height: 24px;
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                  border-radius: 0 0 7px 7px;
+                  box-shadow: inset 0px 1px 2px -1px black;
+                  overflow: hidden;
+                  
+                  .progress_user{
+                        background: linear-gradient(45deg, #4C6970, #b1bcbe);
+                        width: 0%;
+                        transition: all 0.3s ease;
+                        height: 100%;
+                        color: #fff;
+                        box-shadow: inset 0px 1px 2px -1px black;
+                        padding: 3px 11px;
+                        color: #2b343e;
+                        font-weight: 600;
+                        font-size: 14px;
+                  }
+            }
+      }
+}

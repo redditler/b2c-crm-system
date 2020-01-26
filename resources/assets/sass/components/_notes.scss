@@ -1,0 +1,38 @@
+.notes{
+      position: fixed;
+      left: 220px;
+      bottom: 20px;
+      height: max-content;
+      width: 600px;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 6px -3px black;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 9999;
+
+      &.show{
+            opacity: 1;
+      }
+
+      &.notes-success{
+            background: linear-gradient(0deg, #387887 76%, #ccdce0);
+            border: 2px solid #387887;
+            color: #fff;
+            text-shadow: 1px 1px 5px black;
+      }
+
+      &.notes-danger{
+            background: linear-gradient(0deg, #be4620 76%, #d9e0cc);
+            border: 2px solid #be4620;
+            color: #fff;
+            text-shadow: 1px 1px 5px black;
+      }
+
+      &.notes-info{
+            background: linear-gradient(0deg, #607d8b 76%, #d9e0cc);
+            border: 2px solid #607d8b;
+            color: #fff;
+            text-shadow: 1px 1px 5px black;
+      }
+}

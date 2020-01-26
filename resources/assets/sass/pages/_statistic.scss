@@ -1,0 +1,131 @@
+.statistic{
+      .container__content{
+            padding: 40px 20px;
+
+
+            .statistic__table {
+                  .table__header{
+                        background: linear-gradient(0deg, #E0E7E9, #F4F7F8);
+                        border: 1px solid #BBBDBE;
+                        border-radius: 10px;
+                        box-shadow: 2px 2px 6px -2px black;
+                        height: 70px;
+                        overflow: hidden;
+                        position: sticky;
+                        top: 10px;
+
+                        .header__column{
+                              height: 100%;
+
+                              .column__header,
+                              .column__footer{
+                                    height: 50%;
+
+                                    .footer__column{
+                                          height: 100%;
+                                          .column__content{
+                                                border-top: 1px solid #BBBDBE;
+                                          }
+                                    }
+                              }
+
+                              .column__content{
+                                    display: flex;    
+                                    height: 100%;
+                                    width: 100%;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-right: 1px solid #BBBDBE;
+                                    color: #35383a;
+                                    font-weight: 900;
+                                    font-size: 10px;
+                                    font-family: Montserrat;
+
+                                    &.blue-bg{
+                                          background: rgba(91, 158, 174, 0.31);
+                                    }
+                              }
+
+                              &:last-child{
+                                    .column__header{
+                                          .column__content{
+                                                border-right: none;
+                                          }
+                                    }
+
+                                    .column__footer{
+                                          .footer__column:last-child{
+                                                .column__content{
+                                                      border-right: none;
+                                                }
+                                                
+                                          }
+                                    }
+                              }
+                        }
+                  }
+
+                  .table__body{
+                        .body__row{
+                              height: 35px;
+                              margin-top: 10px;
+                              background: #fff;
+                              border-radius: 10px;
+                              box-shadow: 1px 1px 5px -1px black;
+                              overflow: hidden;
+
+                              &#total{
+                                    background: linear-gradient(0deg, #E0E7E9, #F4F7F8);
+                                    
+                                    .body__column .column__content{
+                                          font-weight: 800;
+                                    }
+                              }
+
+                              .body__column{
+                                    height: 100%;
+
+                                    .column {
+                                          height: 100%;
+
+                                          .multiple__content{
+                                                height: 100%;
+                                          }
+                                    }
+
+                                    .column__content{
+                                          height: 100%;
+                                          width: 100%;
+                                          display: flex;    
+                                          height: 100%;
+                                          width: 100%;
+                                          align-items: center;
+                                          justify-content: center;
+                                          border-right: 1px solid #BBBDBE;
+                                          color: #515659;
+                                          font-weight: 500;
+                                          font-size: 11px;
+                                          font-family: Montserrat;
+
+                                          &.blue-bg{
+                                                background: rgba(91, 158, 174, 0.31);
+                                          }
+                                    }
+
+                                    &:last-child{
+                                          .column{
+                                                .multiple__content:last-child{
+                                                      .column__content{
+                                                            border-right: none;
+                                                      }
+                                                }
+                                          }
+                                    }
+                              }
+
+
+                        }
+                  }
+            }
+      }
+}     

@@ -1,0 +1,19 @@
+
+ 2018-09-27 11:14:54 - validation error
+ ["The phone has already been taken.","The email has already been taken."]
+ {"name":"name","surname":"surname","phone":"0666406505","email":"it@stekomail.com.ua","select_1":"1","select_2":"2","text":"bla-bla-bla"}
+ 2018-09-27 11:17:31 - validation error
+ ["The phone must be 10 digits.","The email has already been taken."]
+ {"name":"name","surname":"surname","phone":"06664065051","email":"it@stekomail.com.ua","select_1":"1","select_2":"2","text":"bla-bla-bla"}
+ 2018-09-27 11:17:38 - validation error
+ ["The email has already been taken."]
+ {"name":"name","surname":"surname","phone":"0666406502","email":"it@stekomail.com.ua","select_1":"1","select_2":"2","text":"bla-bla-bla"}
+ 2018-09-27 11:17:44 - validation error
+ ["The name format is invalid.","The email has already been taken."]
+ {"name":"name e21e","surname":"surname","phone":"0666406502","email":"it@stekomail.com.ua","select_1":"1","select_2":"2","text":"bla-bla-bla"}
+ 2018-09-27 11:18:21 - validation error
+ ["The name format is invalid.","The email has already been taken."]
+ {"name":"name d32423","surname":"surname","phone":"0666406502","email":"it@stekomail.com.ua","select_1":"1","select_2":"2","text":"bla-bla-bla"}
+ 2018-09-27 11:18:26 - validation error
+ ["The name format is invalid."]
+ {"name":"name d32423","surname":"surname","phone":"0666406502","email":"it2@stekomail.com.ua","select_1":"1","select_2":"2","text":"bla-bla-bla"}

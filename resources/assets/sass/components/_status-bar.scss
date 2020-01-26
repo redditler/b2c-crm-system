@@ -1,0 +1,20 @@
+.progress-column{
+      height: 8px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 0 0 5px 5px;
+      overflow: hidden;
+      border: 1px solid #dedede;
+      border-top: none;
+
+
+      div{
+            flex-grow: 1;
+            border-right: 1px solid #dedede;
+
+            &:last-child{
+                  border: none;
+            }
+      }
+}

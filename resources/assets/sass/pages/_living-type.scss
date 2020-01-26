@@ -1,0 +1,454 @@
+.content__wrapper[data-id='living-tape']{
+      @include block-style(flex, space-between, center);
+      position: relative;
+      flex-wrap: wrap;
+
+      .main-info{
+            background: linear-gradient(45deg, rgba(221, 221, 221, 0.46), rgba(255, 255, 255, 0.3)), url(/img/living-tape/small_bg.png) round;
+            width: 62%;
+            height: 165px;
+            @include block-style(flex, flex-start, center);
+            padding: 0 25px;
+
+            &::after, &::before{
+                  display: none;
+            }
+
+            .container__avatar{
+                  @include block-style(flex, center, center);
+                  background: white;
+                  width: 120px;
+                  height: 120px;
+                  border-radius: 50%;
+                  position: relative;
+                  box-shadow: -1px 2px 10px -3px black;
+
+                  &::before{
+                        content: '';
+                        @include absolute-position(4px, 4px, 4px, 4px);
+                        border-radius: 50%;
+                        border: 1px solid lightgrey;
+                  }
+            }
+
+            .container__content{
+                  margin-left: 30px;
+
+                  .content__item{
+                        margin: 15px 0;
+                        display: flex;
+
+                        .item--title{
+                              @include text-style(18px, 700, $mid-blue);
+                              text-align: center;
+                              width: 70px;
+                              border-right: 1px solid $mid-blue;
+                              margin-right: 15px;
+                        }
+                        .item--subtitle{
+                              @include text-style(18px, 500, $mid-blue);
+                        }
+                  }
+            }
+      }
+
+      .additonal-info{
+            width: 35%;
+            align-self: stretch;
+            align-items: center;
+            display: flex;
+
+            .container__content{
+                  display: flex;
+                  flex-direction: column;
+
+                  .content__item{
+                        margin-bottom: 10px;
+                        
+                        .item--title{
+                              @include text-style(13px, 700, $mid-blue);
+                              padding-right: 10px;
+                              border-right: 1px solid $mid-blue;
+                              margin-right: 15px;
+                        }
+
+                        .item--subtitle{
+                              @include text-style(13px, 500, $text-color);
+                        }
+                  }
+            }
+      }
+
+      .container__wrapper{
+            width: 48%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+      }
+
+      .main-plan{
+            width: 100%;
+            height: 140px;
+
+            .container__title{
+                  .title{
+                        margin: 20px 0px 5px;
+                        text-align: center;
+                        @include text-style(19px, 700, $mid-blue);
+                  }
+            }
+
+            .container__content{
+                  @include block-style(flex, space-between, center);
+                  height: 60px;
+                  margin-top: 20px;
+
+                  .content__item{
+                        width: 50%;
+                        height: 100%;
+                        @include block-style(flex, center, center);
+                        @include text-style(23px, 500, $mid-grey);
+
+                        &:first-child{
+                              border-right: 1px solid $mid-grey;
+                        }
+                  }
+            }
+      }
+
+      .chart-pie{
+            width: 47%;
+            height: 300px;
+            padding: 0;
+            
+            .container__title{
+                  .title{
+                        @include text-style(15px, 600, $mid-grey);
+                        text-align: center;
+                  }
+            }
+      }
+
+      .visual-chart{
+            width: 49%;
+            height: 470px;
+
+            .container__content{
+                  display: flex;
+                  align-items: center;
+                  position: relative;
+                  height: 100%;
+                  width: 100%;
+
+                  .content__filter-list{
+                        position: relative;
+                        width: 100%;
+                        top: -35px;
+
+                        .list__item{
+                              @include block-style(flex, space-between, flex-end);
+                              border-bottom: 1px solid #f8f9f9;
+                              
+                              .item__btn{
+                                    position: relative;
+                                    height: 100%;
+                                    @include block-style(flex, flex-start, flex-end);
+
+                                    .btn--text{
+                                          padding-left: 35px;
+                                    }
+                                    
+                                    &::before{
+                                          content: '';
+                                          width: 30px;
+                                          height: 100%;
+                                          position: absolute;
+                                    }
+                              }
+
+                              &.all{
+                                    height: 47px;
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #a3c3cc 0%, #799094 100%);
+                                          }
+                                    }
+                              }
+      
+                              &.new{
+                                    height: 48px;
+
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #87d5e2 0%, #5e959e 100%);
+                                          }
+                                    } 
+                              }
+      
+                              &.measurement{
+                                    height: 44px;
+
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #44c2dc 0%, #276e7d 100%);
+                                          }
+                                    } 
+                              }
+      
+                              &.processing{
+                                    height: 44px;
+
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #57abbc 0%, #396f7a 100%);
+                                          }
+                                    } 
+                              }
+      
+                              &.offer{
+                                    height: 40px;
+
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #4a919d 0%, #23464c 100%);
+                                          }
+                                    } 
+                              }
+      
+                              &.waiting{
+                                    height: 41px;
+
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #45828c 0%, #3f767f 44%, #1b3539 100%);
+                                          }
+                                    } 
+                              }
+      
+                              &.complete{
+                                    height: 36px;
+
+                                    .item__btn{
+                                          &::before{
+                                                background: linear-gradient(180deg, #666666 0%, #363737 100%);
+                                          }
+                                    } 
+                              }
+                        }
+                  }
+
+                  .content__visual-chart{
+                        position: absolute;
+                        width: 285px;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        right: 10%;
+                        
+                        .visual-chart{
+                              width: 300px;
+                        }
+                  }
+            }
+      }
+}
+
+
+.container.table{
+      min-width: 100%;
+      padding: 20px 20px 50px;
+
+      .container__filters{
+            position: relative;
+
+            .btn--crm{
+                  position: absolute;
+                  top: 20px;
+            }
+      }
+
+}
+
+#discardingLead{
+      .modal-dialog{
+            margin-top: 100px;
+            width: 500px;
+
+            .modal-content{
+                  padding: 30px;
+                  background: #DEE5E7;
+                  border-radius: 25px;
+                  position: relative;
+
+                  .modal-header, .modal-body, .modal-footer{
+                        padding: 0;
+                        border: none;
+                        background: transparent;
+                  }
+
+                  .modal-header{
+                        .modal-title{
+                              @include text-style(18px, 500, #535659);
+                        }
+                  }
+
+                  .modal-body{
+                        h3{
+                              @include text-style(17px, 500, #535659);
+                              margin: 0;
+                              margin: 20px 10px 10px;
+                        }
+
+
+                        textarea{
+                              resize: none;
+                              height: 140px;
+                              border: none;
+                              border-radius: 5px;
+                              box-shadow: 3px 3px 5px -2px black;
+                        }
+
+                        button{
+                              margin-top: 40px;
+                        }
+                  }
+
+                  .modal-footer{
+                        position: absolute;
+                        right: 30px;
+                        bottom: 30px;
+                  }
+
+            }
+      }
+}
+
+#leadModalAccountPay{
+      .modal-dialog{
+            margin-top: 100px;
+            width: 500px;
+
+            .modal-content{
+                  padding: 30px;
+                  background: #DEE5E7;
+                  border-radius: 25px;
+                  position: relative;
+
+                  .modal-header, .modal-body, .modal-footer{
+                        padding: 0;
+                        border: none;
+                        background: transparent;
+                  }
+
+                  .modal-header{
+                        .modal-title{
+                              @include text-style(18px, 500, #535659);
+                        }
+                  }
+
+                  .modal-body{
+                        display: flex;
+                        justify-content: space-around;
+
+                        input{
+                              padding: 0;
+                              background: transparent;
+                              border: none;
+                              box-shadow: none;
+                              border-bottom: 1px solid grey;
+                              border-radius: 0;
+                        }
+
+                        h3{
+                              @include text-style(17px, 500, #535659);
+                              margin: 0;
+                              margin: 20px 10px 10px;
+                        }
+
+                        button{
+                              margin-top: 40px;
+                        }
+                  }
+
+                  .modal-footer{
+                        display: flex;
+                        justify-content: space-between;
+
+                        &:before, &:after{
+                              display: none;
+                        }
+                  }
+
+            }
+      }
+}
+
+#leadOneClientModal{
+      .modal-dialog{
+            margin-top: 100px;
+
+            .modal-content{
+                  padding: 40px 30px 30px;
+                  background: #DEE5E7;
+                  border-radius: 25px;
+                  position: relative;
+
+                  .modal-header, .modal-body, .modal-footer{
+                        padding: 0;
+                        border: none;
+                        background: transparent;
+                  }
+
+                  .modal-body{
+                        .table{
+                              border-radius: 15px;
+                              border: none;
+                              background: white;
+                              overflow: hidden;
+                              box-shadow: 3px 3px 6px -2px black;
+
+                              thead tr{
+                                    background: #9CBDC6;
+                                    height: 40px;
+                                    @include text-style(14px, 500, #3c3c3c);
+                              }
+
+                              tr{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    border-bottom: 1px solid #dedede;
+                              }
+
+                              th, td{
+                                    width: 19%;
+                                    flex-grow: 1;
+                                    border: none;
+                                    border-right: 1px solid #DEDEDE;
+                                    text-align: center;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    &:last-child{
+                                          border-right: none;
+                                          width: 23%;
+                                    }
+                              }
+
+                              td:last-child{
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    .status-tilte{
+                                          border: 1px solid #dedede;
+                                          border-radius: 5px 5px 0 0;
+                                          width: 100%;
+                                          font-size: 11px;
+                                          padding: 1px;
+                                    }
+                              }
+                        }
+                  }
+            }
+      }
+}

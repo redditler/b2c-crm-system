@@ -1,0 +1,37 @@
+.content__wrapper {
+    padding: 45px 20px;
+    &.title-style {
+        padding: 80px 20px;
+        
+        .container{
+              .container__title{
+                    position: absolute;
+                    top: -60px;
+
+                    .title{
+                        font-size: 72px;
+                        font-weight: 700;
+                        color: #e0e7e9;
+                        margin: 0;
+                    }
+              }
+        }
+    }
+}
+
+.container {
+    border-radius: 15px;
+    background-color: #e0e7e9;
+    margin: 0;
+    margin-bottom: 30px;
+    position: relative;
+
+    .container__title {
+        position: relative;
+
+        .title {
+            @include text-style(72px, 700, #e0e7e9);
+            margin: 0;
+        }
+    }
+}

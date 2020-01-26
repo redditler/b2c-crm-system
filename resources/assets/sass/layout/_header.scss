@@ -1,0 +1,234 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.navbar{
+      z-index: 998;
+      background: url(/img/sidebar/navbar-bg.png);
+      background-position: center;
+      padding: 0 10px;
+      border: none;
+      border-radius: 0;
+
+      transition: all 0.4s ease;
+      box-shadow: 0px 2px 6px black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &::before, &::after{
+            display: none;
+      }
+
+      &__search{
+            display: flex;
+            width: 25%;
+            background: white;
+            height: 30px;
+            border-radius: 50px;
+            box-shadow: 1px 3px 5px -2px black;
+            overflow: hidden;
+            align-items: center;
+
+            .search__logo{
+                  height: 100%;
+                  text-align: center;
+                  padding: 0 7px 0 10px;
+                  display: flex;
+                  align-items: center;
+
+                  i{
+                        color: #535252;
+                  }
+            }
+
+            .search__input{
+                  width: 100%;
+                  height: 70%;
+                  border: none;
+                  padding: 0 10px;
+                  border-left: 1px solid #555454;
+
+                  &:focus, &:active{
+                        outline: none;
+                  }
+            }
+      }
+
+      &__user-menu{
+            height: 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .user-menu__name-wrapper{
+                  position: relative;
+                  display: flex;
+                  align-items: center;
+                  height: 30px;
+                  background: white;
+                  border-radius: 50px;
+                  box-shadow: 1px 3px 5px -2px black;
+                  z-index: 999;
+                  cursor: pointer;
+      
+                  .user-menu__icon{
+                        height: 100%;
+                        text-align: center;
+                        padding: 0 7px 0 10px;
+                        display: flex;
+                        align-items: center;
+      
+                        i{
+                              color: #535252;
+                              font-size: 9px;
+                              transform: rotate(270deg);
+                        }
+                  }
+      
+                  .user-menu__name-area{
+                        display: flex;
+                        padding: 0px 70px 0 10px;
+                        border-left: 1px solid #555454;
+                        height: 70%;
+                        align-items: center;
+      
+                        .user--name{
+                              color: #535252;
+                        }
+                  }
+            }
+            .user-menu__avatar{
+                  background: #fff;
+                  box-shadow: 0px 5px 10px -4px black;
+                  border-radius: 50%;
+                  width: 55px;
+                  height: 55px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  position: absolute;
+                  right: 0px;
+                  z-index: 999;
+
+                  &::before{
+                        content: "";
+                        position: absolute;
+                        width: 49px;
+                        height: 49px;
+                        border: 1px solid #b8b6b6;
+                        border-radius: 50%;
+                  }
+            }
+
+            .navbar__toggle-menu{
+                  z-index: 998;
+                  position: absolute;                  
+                  background: white;
+                  top: 0;
+                  border-radius: 17px;
+                  box-shadow: 0px 2px 7px -3px black;
+                  opacity: 0;
+                  transition: all 0.3s ease;
+                  height: 0;
+                  width: 0;
+
+                  .toggle-menu__header,
+                  .toggle-menu__footer{
+                        opacity: 0;
+                        transition: all 0.01s ease;
+                  }
+
+                  &.active{
+                        top: 55px;
+                        left: -35px;
+                        opacity: 1;
+                        height: 170px;
+                        width: 300px;
+
+                        .toggle-menu__header,
+                        .toggle-menu__footer{
+                              opacity: 1;
+                        }
+                        .toggle-menu__header{
+                              position: absolute;
+                              display: flex;
+                              justify-content: space-between;
+                              width: 100%;
+                              padding: 0 15px;
+                              z-index: 100;
+                              top: 20px;
+
+                              .menu__avatar-part{
+                                    border-radius: 50%;
+                                    border: 1px solid #b2b2b2;
+                                    box-shadow: 1px 1px 5px -2px black;
+                                    width: 85px;
+                                    height: 85px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    position: relative;
+
+                                    &::after{
+                                          content: '';
+                                          position: absolute;
+                                          border: 1px solid #b2b2b2;
+                                          border-radius: 50%;
+                                          margin: 0 auto;
+                                          top: 3px;
+                                          left: 3px;
+                                          right: 3px;
+                                          bottom: 3px;
+                                    }
+
+                                    .avatar-menu{
+                                          width: 55%;
+                                    }
+                              }
+
+                              .menu__name-part{
+                                    padding: 10px;
+                                    position: absolute;
+                                    left: 110px;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                              }
+
+                              .menu--user-name{
+                                    color: #3E757E;
+                                    font-family: Montserrat;
+                                    font-weight: 700;
+                                    font-size: 15px;
+                              }
+                        }
+
+                        .toggle-menu__footer{
+                              position: absolute;
+                              z-index: 100;
+                              bottom: 11px;
+                              width: 100%;
+                              display: flex;
+                              justify-content: space-between;
+                              padding: 0 15px;
+                        }
+
+                        &::before{
+                              content: '';
+                              width: 30px;
+                              height: 30px;
+                              background: white;
+                              position: absolute;
+                              left: 34px;
+                              margin: auto;
+                              top: -11px;
+                              transform: rotate(45deg) skew(21deg, 18deg);
+                              box-shadow: -3px -3px 3px -3px black;
+                              border-radius: 5px 0 0 0;
+                              z-index: 99;
+                        }
+                  }
+            }
+      }
+}

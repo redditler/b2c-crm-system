@@ -1,0 +1,649 @@
+
+ 2018-05-02 10:00:39 - validation error
+ ["The leed phone must be 10 digits."]
+ {"leed_name":"test","leed_phone":"093111111122","leed_region_id":"13","label_id":"3","client_ip":"127.0.0.1"}
+ 2018-05-02 10:12:12 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"2343423422","leed_name":"tests12","leed_region_id":"13","label_id":"3","client_ip":"94.153.148.122"}
+ 2018-05-02 10:17:40 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0674583959","leed_name":"0674583959","leed_region_id":"6","label_id":"3","client_ip":"77.93.43.186"}
+ 2018-05-02 10:19:13 - validation error. Too many requests from - 127.0.0.1
+ 2018-05-02 10:20:24 - validation error. 
+Too many requests from - 127.0.0.1
+ 2018-05-02 10:20:50 - validation error. 
+ Too many requests from - 127.0.0.1
+ 2018-05-02 16:10:08 - validation error
+ ["The leed name field is required."]
+ {"leed_phone":"0502607315","leed_name":null,"leed_region_id":"4","label_id":"3","client_ip":"31.135.107.243"}
+ 2018-05-03 10:45:30 - validation error
+ ["The leed name field is required."]
+ {"leed_phone":"1241234213","leed_name":null,"leed_region_id":"13","label_id":"3","client_ip":"94.153.148.122"}
+ 2018-05-04 07:53:40 - validation error. 
+ Too many requests from - 46.211.248.239
+ 2018-05-04 07:54:02 - validation error. 
+ Too many requests from - 46.211.248.239
+ 2018-05-04 12:05:49 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0684586647","leed_name":"\u041d\u0430\u0442\u0430\u043b\u044c\u044f \u202d\u202d","leed_region_id":"2","label_id":"1","client_ip":"95.133.246.155"}
+ 2018-05-04 18:30:19 - validation error. 
+ Too many requests from - 46.211.155.27
+ 2018-05-05 11:24:19 - validation error
+ ["The leed region id field is required."]
+ {"leed_phone":"0973553116","leed_name":"\u0422\u043d\u043d\u0430","leed_region_id":null,"label_id":"3","client_ip":"31.202.8.144"}
+ 2018-05-05 16:34:54 - validation error. 
+ Too many requests from - 93.78.12.182
+ 2018-05-05 16:34:59 - validation error. 
+ Too many requests from - 93.78.12.182
+ 2018-05-05 19:11:51 - validation error. 
+ Too many requests from - 95.133.194.91
+ 2018-05-06 16:39:51 - validation error. 
+ Too many requests from - 46.133.57.73
+ 2018-05-06 18:18:17 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0668959652","leed_name":"111","leed_region_id":"4","label_id":"3","client_ip":"91.202.144.10"}
+ 2018-05-06 20:38:04 - validation error. 
+ Too many requests from - 88.135.227.146
+ 2018-05-07 13:12:11 - validation error. 
+ Too many requests from - 37.73.250.165
+ 2018-05-07 16:57:15 - validation error
+ ["The leed region id must be a number."]
+ {"leed_phone":"0966805036","leed_name":"\u0418\u0440\u0438\u043d\u0430","leed_region_id":"\u0413\u043e\u0440\u043e\u0434*","client_ip":"188.163.45.32","label_id":"2"}
+ 2018-05-08 17:33:18 - validation error. 
+ Too many requests from - 85.238.96.82
+ 2018-05-09 11:43:51 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0504200958","leed_name":"Yaroslav","leed_region_id":"1","client_ip":"99.99.99.10","label_id":null}
+ 2018-05-09 19:57:55 - validation error. 
+ Too many requests from - 37.73.247.84
+ 2018-05-09 19:57:56 - validation error. 
+ Too many requests from - 37.73.247.84
+ 2018-05-09 19:57:56 - validation error. 
+ Too many requests from - 37.73.247.84
+ 2018-05-09 19:57:57 - validation error. 
+ Too many requests from - 37.73.247.84
+ 2018-05-09 19:57:58 - validation error. 
+ Too many requests from - 37.73.247.84
+ 2018-05-09 20:34:15 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0983485299","leed_name":"\u2026\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f","leed_region_id":"13","label_id":"3","client_ip":"46.211.26.108"}
+ 2018-05-10 08:37:41 - validation error. 
+ Too many requests from - 195.189.234.6
+ 2018-05-10 10:10:10 - validation error. 
+ Too many requests from - 37.55.24.132
+ 2018-05-10 10:10:12 - validation error. 
+ Too many requests from - 37.55.24.132
+ 2018-05-10 10:14:30 - validation error. 
+ Too many requests from - 37.55.24.132
+ 2018-05-10 10:27:32 - validation error. 
+ Too many requests from - 5.255.184.184
+ 2018-05-10 11:44:56 - validation error. 
+ Too many requests from - 5.255.184.210
+ 2018-05-10 12:31:58 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0638038104","leed_name":"\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u041d\u0414\u0420\u0406\u0419\u041e\u0412\u0418\u042763","leed_region_id":"4","client_ip":"109.227.115.35","label_id":"1"}
+ 2018-05-10 21:15:46 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0968226064","leed_name":"1111","leed_region_id":"13","label_id":"3","client_ip":"95.133.1.88"}
+ 2018-05-11 07:22:26 - validation error. 
+ Too many requests from - 46.133.246.154
+ 2018-05-11 08:34:13 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0675565438","leed_name":"\u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u04300","leed_region_id":"13","label_id":"1","client_ip":"78.26.151.243"}
+ 2018-05-11 08:55:28 - validation error. 
+ Too many requests from - 46.211.97.184
+ 2018-05-11 09:12:18 - validation error. 
+ Too many requests from - 37.73.241.98
+ 2018-05-11 09:41:38 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0996076516","leed_name":"\u0412\u0430\u043b\u0435\u0440\u0438\u0439","leed_region_id":"1","client_ip":"99.99.99.152","label_id":null}
+ 2018-05-11 19:58:19 - validation error. 
+ Too many requests from - 91.225.36.212
+ 2018-05-12 07:02:15 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0676548990","leed_name":"1300*1400","leed_region_id":"13","label_id":"3","client_ip":"93.175.216.254"}
+ 2018-05-12 22:52:35 - validation error. 
+ Too many requests from - 89.22.204.176
+ 2018-05-13 15:36:35 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"1111111111","leed_name":"111","leed_region_id":"1","label_id":"1","client_ip":"188.163.16.119"}
+ 2018-05-13 22:32:28 - validation error. 
+ Too many requests from - 185.23.105.248
+ 2018-05-14 11:59:57 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0936580063","leed_name":"\u0411\u043e\u0440\u0438\u0441","leed_region_id":"4","client_ip":"99.99.99.61","label_id":null}
+ 2018-05-15 10:51:28 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0677111602","leed_name":"\u041c\u0430\u043a\u0441\u0438\u043c","leed_region_id":"4","client_ip":"99.99.99.43","label_id":null}
+ 2018-05-15 15:47:01 - validation error. 
+ Too many requests from - 176.38.131.112
+ 2018-05-15 18:15:38 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0986203048","leed_name":"\u044e\u0440\u0438\u0439","leed_region_id":"13","client_ip":"99.99.99.150","label_id":null}
+ 2018-05-15 18:15:40 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0986203048","leed_name":"\u044e\u0440\u0438\u0439","leed_region_id":"13","client_ip":"99.99.99.108","label_id":null}
+ 2018-05-15 21:38:00 - validation error. 
+ Too many requests from - 91.214.85.79
+ 2018-05-16 07:39:33 - validation error. 
+ Too many requests from - 212.3.103.165
+ 2018-05-16 11:09:15 - validation error. 
+ Too many requests from - 193.22.205.73
+ 2018-05-16 11:20:54 - validation error. 
+ Too many requests from - 93.72.26.222
+ 2018-05-16 12:34:16 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0939618265","leed_name":"\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440","leed_region_id":"4","client_ip":"99.99.99.45","label_id":null}
+ 2018-05-17 12:10:43 - validation error. 
+ Too many requests from - 46.98.2.147
+ 2018-05-17 13:04:39 - validation error. 
+ Too many requests from - 213.226.141.242
+ 2018-05-17 14:41:39 - validation error. 
+ Too many requests from - 188.163.111.54
+ 2018-05-17 14:42:28 - validation error. 
+ Too many requests from - 188.163.111.54
+ 2018-05-17 15:40:17 - validation error. 
+ Too many requests from - 46.133.231.184
+ 2018-05-17 15:40:21 - validation error. 
+ Too many requests from - 46.133.231.184
+ 2018-05-17 15:55:21 - validation error. 
+ Too many requests from - 77.123.102.39
+ 2018-05-18 13:12:06 - validation error. 
+ Too many requests from - 95.47.149.196
+ 2018-05-19 19:29:22 - validation error. 
+ Too many requests from - 77.109.50.96
+ 2018-05-20 12:08:59 - validation error. 
+ Too many requests from - 46.200.166.30
+ 2018-05-20 12:09:01 - validation error. 
+ Too many requests from - 46.200.166.30
+ 2018-05-20 12:09:02 - validation error. 
+ Too many requests from - 46.200.166.30
+ 2018-05-20 12:09:05 - validation error. 
+ Too many requests from - 46.200.166.30
+ 2018-05-21 14:21:17 - validation error. 
+ Too many requests from - 176.102.223.23
+ 2018-05-21 20:28:39 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0672921856","leed_name":"\u043b\u0435\u043e\u043d\u0438\u0434","leed_region_id":"4","client_ip":"99.99.99.220","label_id":null}
+ 2018-05-22 15:26:50 - validation error. 
+ Too many requests from - 46.133.30.231
+ 2018-05-23 12:39:32 - validation error
+ ["The leed phone must be 10 digits."]
+ {"leed_phone":"050617963_","leed_name":"\u0420\u0443\u0441\u043b\u0430\u043d","leed_region_id":"13","client_ip":"46.133.35.82","label_id":"2"}
+ 2018-05-23 15:53:58 - validation error
+ ["The leed region id field is required."]
+ {"leed_phone":"0509175069","leed_name":"\u041c\u0430\u0440\u043a","leed_region_id":null,"label_id":"3","client_ip":"46.133.14.70"}
+ 2018-05-23 17:27:51 - validation error
+ ["The leed region id must be a number.","The label id must be a number."]
+ {"leed_phone":"0953592499","leed_name":"\u0421\u0438\u043b\u0435\u043d\u043a\u043e \u0410\u0440\u0442\u0435\u043c \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u0438\u0447","leed_region_id":"\u0414\u043d\u0435\u043f\u0440","client_ip":"99.99.99.7","label_id":"\u0421\u0431\u043e\u0440\u0449\u0438\u043a \u043c\u0435\u0442\u0430\u043b\u043b\u043e\u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0439"}
+ 2018-05-24 14:45:45 - validation error
+ ["The leed name field is required.","The leed phone field is required.","The leed region id field is required.","The client ip field is required."]
+ []
+ 2018-05-25 08:20:45 - validation error. 
+ Too many requests from - 31.41.49.71
+ 2018-05-25 08:20:47 - validation error. 
+ Too many requests from - 31.41.49.71
+ 2018-05-25 11:49:24 - validation error. 
+ Too many requests from - 188.163.44.215
+ 2018-05-25 13:08:17 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0502123385","leed_name":"\u0410\u043b\u0435\u043a\u0441\u0435\u0439","leed_region_id":"13","client_ip":"99.99.99.199","label_id":null}
+ 2018-05-27 13:28:44 - validation error. 
+ Too many requests from - 212.90.62.145
+ 2018-05-28 18:27:33 - validation error. 
+ Too many requests from - 193.19.75.205
+ 2018-05-29 11:03:00 - validation error
+ ["The leed phone must be 10 digits."]
+ {"leed_phone":"063509723","leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_region_id":"1","label_id":"3","client_ip":"37.73.187.0"}
+ 2018-05-29 15:20:04 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0952194227","leed_name":"\u0441\u0435\u0440\u0433\u0435\u043995","leed_region_id":"8","client_ip":"77.247.31.237","label_id":"1"}
+ 2018-05-29 22:45:06 - validation error. 
+ Too many requests from - 46.98.78.2
+ 2018-05-30 15:24:48 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0683852060","leed_name":"\u0410\u043b\u0435\u043a\u0441\u0435\u0439","leed_region_id":"4","client_ip":"99.99.99.138","label_id":null}
+ 2018-05-30 21:08:42 - validation error. 
+ Too many requests from - 87.228.0.214
+ 2018-05-30 21:08:47 - validation error. 
+ Too many requests from - 87.228.0.214
+ 2018-05-31 13:34:59 - validation error. 
+ Too many requests from - 77.111.244.60
+ 2018-05-31 15:17:49 - validation error. 
+ Too many requests from - 217.171.50.218
+ 2018-05-31 20:08:56 - validation error. 
+ Too many requests from - 46.133.31.174
+ 2018-05-31 20:53:42 - validation error. 
+ Too many requests from - 46.211.75.13
+ 2018-05-31 21:02:03 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0507293940","leed_name":"\u0430\u043d\u043d\u0430","leed_region_id":"5","client_ip":"99.99.99.210","label_id":null}
+ 2018-06-01 18:32:27 - validation error. 
+ Too many requests from - 51.38.232.220
+ 2018-06-01 21:19:00 - validation error. 
+ Too many requests from - 46.98.125.148
+ 2018-06-02 06:45:40 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0959173358","leed_name":"\u0410\u043b\u0438\u043d\u0430","leed_region_id":"13","client_ip":"99.99.99.149","label_id":null}
+ 2018-06-04 12:35:48 - validation error. 
+ Too many requests from - 46.133.36.226
+ 2018-06-04 18:36:07 - validation error. 
+ Too many requests from - 212.90.63.158
+ 2018-06-04 18:36:20 - validation error. 
+ Too many requests from - 212.90.63.158
+ 2018-06-04 18:36:30 - validation error. 
+ Too many requests from - 212.90.63.158
+ 2018-06-04 19:57:31 - validation error. 
+ Too many requests from - 46.133.98.114
+ 2018-06-05 08:24:26 - validation error. 
+ Too many requests from - 195.211.136.38
+ 2018-06-05 14:25:25 - validation error. 
+ Too many requests from - 159.224.190.149
+ 2018-06-05 18:06:19 - validation error. 
+ Too many requests from - 93.78.31.71
+ 2018-06-05 18:17:54 - validation error. 
+ Too many requests from - 188.163.89.32
+ 2018-06-05 18:30:15 - validation error. 
+ Too many requests from - 46.133.44.157
+ 2018-06-05 19:38:16 - validation error. 
+ Too many requests from - 46.211.114.81
+ 2018-06-06 13:04:57 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0675612229","leed_name":"\u0432\u0430\u0434\u0438\u043c","leed_region_id":"1","client_ip":"99.99.99.216","label_id":null}
+ 2018-06-07 08:26:28 - validation error. 
+ Too many requests from - 176.105.202.33
+ 2018-06-07 12:49:12 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0955519165","leed_name":"\u041d\u0430\u0442\u0430\u043b\u044c\u044f","leed_region_id":"2","client_ip":"99.99.99.209","label_id":null}
+ 2018-06-07 16:40:37 - validation error. 
+ Too many requests from - 83.170.198.98
+ 2018-06-07 21:35:27 - validation error. 
+ Too many requests from - 46.98.60.159
+ 2018-06-07 21:36:22 - validation error. 
+ Too many requests from - 46.98.60.159
+ 2018-06-08 13:20:04 - validation error. 
+ Too many requests from - 46.211.112.133
+ 2018-06-08 16:41:40 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0631409260","leed_name":"\u0412\u0430\u043b\u044f","leed_region_id":"4","client_ip":"99.99.99.147","label_id":null}
+ 2018-06-09 12:07:45 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0503187805","leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_region_id":"5","client_ip":"99.99.99.135","label_id":null}
+ 2018-06-09 12:51:10 - validation error. 
+ Too many requests from - 46.211.150.84
+ 2018-06-09 14:33:28 - validation error. 
+ Too many requests from - 91.233.49.242
+ 2018-06-09 15:55:30 - validation error
+ ["The leed name field is required.","The leed phone field is required.","The leed region id field is required.","The client ip field is required."]
+ []
+ 2018-06-10 21:09:08 - validation error. 
+ Too many requests from - 212.115.244.89
+ 2018-06-11 07:52:20 - validation error. 
+ Too many requests from - 37.52.76.194
+ 2018-06-11 08:09:55 - validation error. 
+ Too many requests from - 194.37.248.11
+ 2018-06-11 08:10:18 - validation error. 
+ Too many requests from - 194.37.248.11
+ 2018-06-11 11:08:12 - validation error. 
+ Too many requests from - 194.37.248.11
+ 2018-06-11 18:59:51 - validation error. 
+ Too many requests from - 37.229.21.235
+ 2018-06-12 09:36:25 - validation error. 
+ Too many requests from - 176.106.192.52
+ 2018-06-12 09:36:25 - validation error. 
+ Too many requests from - 176.106.192.52
+ 2018-06-12 09:44:51 - validation error. 
+ Too many requests from - 46.175.254.11
+ 2018-06-12 09:48:19 - validation error. 
+ Too many requests from - 188.163.4.39
+ 2018-06-12 09:48:19 - validation error. 
+ Too many requests from - 188.163.4.39
+ 2018-06-12 09:48:20 - validation error. 
+ Too many requests from - 188.163.4.39
+ 2018-06-12 09:48:20 - validation error. 
+ Too many requests from - 188.163.4.39
+ 2018-06-12 09:48:20 - validation error. 
+ Too many requests from - 188.163.4.39
+ 2018-06-12 12:19:24 - validation error. 
+ Too many requests from - 91.214.85.5
+ 2018-06-13 01:18:12 - validation error
+ ["The label id must be a number."]
+ {"leed_phone":"0673351676","leed_name":"\u0412\u043b\u0430\u0434\u0438\u0441\u043b\u0430\u0432","leed_region_id":"13","client_ip":"99.99.99.193","label_id":null}
+ 2018-06-13 13:53:17 - validation error. 
+ Too many requests from - 195.178.11.45
+ 2018-06-14 10:03:54 - validation error. 
+ Too many requests from - 46.211.134.45
+ 2018-06-14 11:25:35 - validation error. 
+ Too many requests from - 81.25.228.230
+ 2018-06-14 11:35:39 - validation error. 
+ Too many requests from - 92.113.109.249
+ 2018-06-14 11:36:07 - validation error. 
+ Too many requests from - 92.113.109.249
+ 2018-06-15 16:43:41 - validation error. 
+ Too many requests from - 178.93.243.87
+ 2018-06-16 07:44:36 - validation error. 
+ Too many requests from - 93.77.46.35
+ 2018-06-16 07:44:38 - validation error. 
+ Too many requests from - 93.77.46.35
+ 2018-06-16 07:44:42 - validation error. 
+ Too many requests from - 93.77.46.35
+ 2018-06-16 14:06:55 - validation error. 
+ Too many requests from - 130.180.208.154
+ 2018-06-16 14:07:25 - validation error. 
+ Too many requests from - 130.180.208.154
+ 2018-06-18 16:18:20 - validation error. 
+ Too many requests from - 176.36.228.158
+ 2018-06-18 20:34:26 - validation error. 
+ Too many requests from - 178.151.211.201
+ 2018-06-18 22:25:09 - validation error. 
+ Too many requests from - 93.77.46.35
+ 2018-06-19 09:19:36 - validation error. 
+ Too many requests from - 109.251.25.5
+ 2018-06-19 22:04:51 - validation error. 
+ Too many requests from - 95.134.216.193
+ 2018-06-20 19:33:06 - validation error. 
+ Too many requests from - 176.37.195.142
+ 2018-06-21 13:50:33 - validation error. 
+ Too many requests from - 176.37.132.18
+ 2018-06-22 09:59:48 - validation error. 
+ Too many requests from - 46.133.187.124
+ 2018-06-23 20:03:09 - validation error. 
+ Too many requests from - 178.92.116.76
+ 2018-06-26 11:38:13 - validation error. 
+ Too many requests from - 193.93.185.92
+ 2018-06-26 15:59:47 - validation error. 
+ Too many requests from - 194.44.255.20
+ 2018-06-29 09:25:21 - validation error. 
+ Too many requests from - 91.215.69.194
+ 2018-06-29 15:56:59 - validation error. 
+ Too many requests from - 212.3.125.234
+ 2018-06-30 03:30:01 - validation error. 
+ Too many requests from - 109.254.254.58
+ 2018-07-16 00:36:36 - validation error
+ ["The leed phone must be 10 digits."]
+ {"leed_phone":"67921957","leed_name":"\u042e\u043b\u0438\u0439","leed_region_id":"5","label_id":"3","client_ip":"99.99.99.145"}
+ 2018-07-26 14:25:17 - validation error. 
+ Too many requests from - 99.99.99.151
+ 2018-08-10 07:56:09 - validation error
+ ["The leed name format is invalid."]
+ {"leed_phone":"0503636806","leed_name":"05","leed_region_id":"1","label_id":"1","client_ip":"88.88.88.152","comment":null}
+ 2018-08-16 17:45:11 - validation error
+ ["The leed name field is required.","The leed phone field is required.","The leed region id field is required.","The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required.","The client ip field is required."]
+ []
+ 2018-08-16 17:48:10 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"1","label_id":"5","leed_city":"\u0414\u043d\u0435\u043f\u0440","client_ip":"127.0.0.1"}
+ 2018-08-16 17:48:32 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"1","label_id":"5","leed_city":"\u0414\u043d\u0435\u043f\u0440","client_ip":"127.0.0.1"}
+ 2018-08-16 17:49:54 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"1","label_id":"5","leed_city":"\u0414\u043d\u0435\u043f\u0440","client_ip":"127.0.0.1"}
+ 2018-08-16 17:50:44 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"2","label_id":"5","leed_city":"\u0414\u043d\u0435\u043f\u0440","client_ip":"127.0.0.1"}
+ 2018-08-16 17:51:10 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"2","client_ip":"127.0.0.1"}
+ 2018-08-16 17:52:08 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"2","client_ip":"127.0.0.1"}
+ 2018-08-16 17:52:48 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0999999999","leed_region_id":"2","client_ip":"127.0.0.1"}
+ 2018-08-16 17:54:24 - validation error
+ ["The leed name field is required.","The leed phone field is required.","The leed region id field is required.","The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required.","The client ip field is required."]
+ []
+ 2018-08-16 17:55:03 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required.","The client ip field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0675623265","leed_region_id":"2"}
+ 2018-08-16 17:55:28 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0675623265","leed_region_id":"2","client_ip":"192.168.12.123"}
+ 2018-08-16 17:55:39 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0675623265","leed_region_id":"2","client_ip":"192.168.12.123"}
+ 2018-08-16 17:55:46 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0675623265","leed_region_id":"2","client_ip":"192.168.12.123"}
+ 2018-08-16 17:56:07 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0675623265","leed_region_id":"2","client_ip":"192.168.12.123"}
+ 2018-08-16 17:57:01 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","leed_phone":"0675623265","leed_region_id":"2","client_ip":"192.168.12.123"}
+ 2018-08-20 11:02:11 - validation error. 
+ Too many requests from - 192.168.12.123
+ 2018-08-21 09:47:30 - validation error
+ ["The leed email field is required.","The leed promo code field is required.","The leed promo discount field is required."]
+ {"leed_name":"EmailSendd","leed_phone":"0993444991","leed_region_id":"8","client_ip":"192.168.12.133"}
+ 2018-09-27 11:10:22 - validation error. 
+ Too many requests from - 
+ 2018-09-27 11:10:40 - validation error. 
+ Too many requests from - 
+ 2018-09-27 11:10:42 - validation error. 
+ Too many requests from - 
+ 2018-09-27 11:10:43 - validation error. 
+ Too many requests from - 
+ 2018-09-27 11:10:44 - validation error. 
+ Too many requests from - 
+ 2018-10-12 10:14:21 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"\u041f\u0440\u043e\u043c\u043e\u043a\u043e\u0434","leed_phone":"0000000003","leed_region_id":"8","leed_email":"it14@stekomail.com.ua","leed_promo_code":"123456","leed_promo_discount":"47","client_ip":"192.168.0.5"}
+ 2018-10-12 10:15:20 - validation error. 
+ Too many requests from - 192.168.0.5
+ 2018-10-16 10:07:41 - validation error. 
+ Too many requests from - 192.168.12.122
+ 2018-10-16 10:32:19 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"\u041f\u0440\u043e\u043c\u043e\u043a\u043e\u0434","leed_phone":"0000000028","leed_region_id":"8","leed_email":"it14@stekomail.com.ua","leed_promo_code":"666666","leed_promo_discount":"33","client_ip":"192.168.0.24"}
+ 2018-10-16 11:08:33 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"\u041f\u0430\u0444\u043d\u0443\u0442\u0438\u0439","leed_phone":"0000000032","leed_region_id":"2","leed_email":"it14@stekomail.com.ua","leed_promo_code":"777777","leed_promo_discount":"33","client_ip":"192.168.0.27"}
+ 2018-10-16 11:37:41 - validation error. 
+ Too many requests from - 192.168.12.126
+ 2018-10-16 11:41:03 - validation error. 
+ Too many requests from - 192.168.12.130
+ 2019-04-11 08:33:18 - validation error
+ ["The leed name field is required.","The leed phone field is required.","The leed region id field is required.","The leed promo code field is required.","The leed promo discount field is required.","The client ip field is required."]
+ {"name":"asdsa"}
+ 2019-04-11 08:36:23 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 08:36:32 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885544","leed_region_id":"1","leed_promo_code":"125145","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 08:36:55 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885544","leed_region_id":"1","leed_promo_code":"125141","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 08:37:35 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 08:57:33 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885512","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 09:40:20 - validation error
+ ["The leed phone has already been taken.","The client ip field is required."]
+ {"leed_name":"test","leed_phone":"0998885511","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33"}
+ 2019-04-11 09:40:32 - validation error
+ ["The client ip field is required."]
+ {"leed_name":"test","leed_phone":"0998885510","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33"}
+ 2019-04-11 09:44:33 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885510","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 09:45:46 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885509","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 10:33:04 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885508","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 10:37:34 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885507","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 10:41:40 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885506","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 11:07:17 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885504","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 11:10:50 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885503","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 11:11:40 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885503","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99"}
+ 2019-04-11 11:12:40 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 11:12:44 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 11:12:46 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 11:12:47 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 11:12:56 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 11:35:01 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885596","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-04-11 11:36:51 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 11:44:32 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885594","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-04-11 11:45:17 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-04-11 14:59:34 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885592","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-04-11 15:09:22 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885591","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-04-11 15:29:13 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885589","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-04-15 13:42:07 - validation error
+ ["The leed phone must be 10 digits.","The label id must be a number.","The client ip field is required."]
+ {"leed_name":"testttt","leed_phone":"099887788774","label_id":"callback","email":null,"leed_region_id":"13"}
+ 2019-04-15 13:42:29 - validation error
+ ["The label id must be a number.","The client ip field is required."]
+ {"leed_name":"testttt","leed_phone":"0996665544","label_id":"callback","email":null,"leed_region_id":"13"}
+ 2019-04-15 13:43:08 - validation error
+ ["The label id must be a number.","The client ip field is required."]
+ {"leed_name":"testttt","leed_phone":"0996665544","label_id":"callback","email":null,"leed_region_id":"13"}
+ 2019-04-15 13:43:45 - validation error
+ ["The client ip field is required."]
+ {"leed_name":"testttt","leed_phone":"9995558844","label_id":"1","email":null,"leed_region_id":"13"}
+ 2019-04-15 14:01:19 - validation error
+ ["The client ip field is required."]
+ {"leed_name":"testttt","leed_phone":"0998887744","label_id":"1","email":null,"leed_region_id":"13"}
+ 2019-04-15 14:02:19 - validation error
+ ["The client ip field is required."]
+ {"leed_name":"testttt","leed_phone":"0998887744","label_id":"1","email":null,"leed_region_id":"13"}
+ 2019-04-15 14:24:24 - validation error. 
+ Too many requests from - 199.99.99.99
+ 2019-04-15 14:24:43 - validation error. 
+ Too many requests from - 199.99.99.99
+ 2019-04-15 14:24:56 - validation error. 
+ Too many requests from - 199.99.99.99
+ 2019-05-21 15:32:36 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:32:40 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:32:42 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:05 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:07 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:09 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:11 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:13 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:15 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:19 - validation error. 
+ Too many requests from - 195.99.99.99
+ 2019-05-21 15:33:24 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.98","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:28 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.97","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:32 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:34 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:36 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:37 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:38 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:33:51 - validation error
+ ["The leed phone has already been taken."]
+ {"leed_name":"test","leed_phone":"0998885586","leed_region_id":"1","leed_promo_code":"125111","leed_promo_discount":"33","client_ip":"195.99.99.99","leed_email":"testttt@gmail.com"}
+ 2019-05-21 15:36:04 - validation error
+ ["The client ip field is required."]
+ {"leed_name":"test","leed_phone":"0978889988","leed_region_id":"11"}
+ 2019-05-21 15:37:30 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:34 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:35 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:37 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:38 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:40 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:41 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:43 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-05-21 15:37:44 - validation error. 
+ Too many requests from - 197.97.99.99
+ 2019-06-13 16:17:21 - validation error
+ ["The leed name format is invalid."]
+ {"leed_name":"test12","leed_phone":"0978889988","leed_region_id":"11","client_ip":"197.97.99.99"}
+ 2019-06-13 16:25:27 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-06-13 16:31:06 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-06-13 17:24:08 - validation error
+ ["The leed name format is invalid."]
+ {"leed_name":"\u041f\u0435\u0442\u044f\u044f\u044f2\u044f\u044f","leed_phone":"0198524551","leed_region_id":"12","client_ip":"199.129.231.43","label_id":"1"}
+ 2019-06-13 17:31:43 - validation error. 
+ Too many requests from - 199.129.231.43
+ 2019-06-14 10:08:51 - validation error
+ ["The leed name format is invalid."]
+ {"leed_name":"test1406","leed_phone":"0198524305","leed_region_id":"12","client_ip":"199.129.231.43","label_id":"1"}
+ 2019-06-14 10:36:16 - validation error
+ ["The leed name format is invalid."]
+ {"leed_name":"test140684","leed_phone":"0198524322","leed_region_id":"12","client_ip":"199.129.231.43","label_id":"1"}
+ 2019-11-22 13:28:49 - validation error
+ ["The leed name field is required.","The leed phone field is required.","The branch id field is required.","The client ip field is required."]
+ []
+ 2019-11-25 10:12:09 - validation error
+ ["The client ip field is required."]
+ {"leed_name":"test","leed_phone":"0974740571","branch_id":"11"}
+ 2019-11-25 10:12:33 - validation error
+ ["The client ip must be a valid IP address."]
+ {"leed_name":"test","leed_phone":"0974740571","branch_id":"11","client_ip":"195.01.22.155"}
+ 2019-11-26 14:12:08 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-11-26 14:12:21 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-11-26 14:12:23 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-11-26 14:12:24 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-11-26 14:20:02 - validation error. 
+ Too many requests from - 31.129.231.43
+ 2019-11-26 14:23:23 - validation error. 
+ Too many requests from - 31.129.231.43

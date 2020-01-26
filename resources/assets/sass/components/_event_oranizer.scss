@@ -1,0 +1,88 @@
+#eventModal{
+      .modal-dialog {
+            margin-top: 150px;
+            width: max-content;
+            background: #DEE5E7;
+            border-radius: 20px;
+            padding: 0 10px;
+
+            .modal-header{
+                  .modal__title{
+                        text-align: center;
+                        @include text-style(17px, 500, #636363);
+                  }
+            }
+
+            .modal-body{
+                  width: 500px;
+
+                  form{
+                        label{
+                              display: flex;
+
+                              .form-control{
+                                    border: none;
+                                    background: transparent;
+                                    box-shadow: none;
+                                    border-bottom: 1px solid #707070;
+                                    border-radius: 0;
+                                    padding: 5px 10px 0 10px;
+                                    height: 30px;
+                              }
+
+                              &.event-for{
+                                    flex-direction: column;
+                              }
+                        }
+
+                        .event-date{
+                              display: flex;
+                              align-items: flex-end;
+                              justify-content: space-between;
+
+                              .date-event-change{
+                                    margin-right: 15px;
+                                    flex-grow: 1;
+                              }
+
+                              label{
+                                    width: 30%;
+                                    display: flex;
+                                    align-items: flex-end;
+                                    margin-bottom: 0;
+                                    flex-grow: 2;
+
+                                    .subtitle{
+                                          width: 50px;
+                                          height: 100%;
+                                          display: flex;
+                                          align-items: flex-end;
+                                          justify-content: center;
+                                    }
+                              }
+                        }
+
+                        .event-color{
+                              height: 30px;
+                              display: flex;
+                              align-items: center;
+                              margin-top: 30px;
+
+                              .title{
+                                    margin-right: 25px;
+                              }
+                        }
+                  }
+            }
+
+            .modal-footer{
+                  display: flex;
+                  justify-content: space-between;
+
+                  &::before,
+                  &::after{
+                        display: none;
+                  }
+            }
+      }
+}

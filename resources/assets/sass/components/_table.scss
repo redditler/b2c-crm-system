@@ -1,0 +1,480 @@
+.table{
+      display: flex;
+      flex-direction: column;
+      background: none;
+
+      .table__head{
+            display: flex;
+            position: relative;
+            background-image: linear-gradient(112deg, #48525e 0%, #101723 100%);
+            margin-bottom: 15px;
+            height: 60px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 8px -1px black;
+
+            &::before{
+                  content: '';
+                  background-image: linear-gradient(23deg, #050505 0%, #7f8fa0 17%, #9a9fa4 28%, #979797 36%, #f8faf9 45%, #6f8181 61%, #8898aa 72%, #49637d 84%, #050506 100%);
+                  position: absolute;
+                  @include absolute-position(5px, 5px, 5px, 5px);
+                  border-radius: 9px;
+                  box-shadow: 0px 0px 4px 0px black;
+            }
+
+            .head__row{
+                  display: flex;
+                  width: calc(100% - 16px);
+                  position: absolute;
+                  @include absolute-position(8px, 8px, 8px, 8px);
+                  background-image: linear-gradient(112deg, #48525e 0%, #101723 100%);
+                  border-radius: 7px;
+                  padding: 2px 0;
+                  box-shadow: inset 0 0 5px -1px black;
+
+                  th{
+                        height: inherit !important;
+                        text-transform: capitalize;
+                        box-sizing: border-box;
+                        color: #ffffff !important;
+                        font-family: Montserrat;
+                        font-size: 11px !important;
+                        font-weight: 700 !important;
+                        border-right: 1px solid #dedede;
+
+                        &:last-child{
+                              border: none;
+                        }
+                  }
+                  
+            }
+      }
+
+      .table__body{
+
+            tr{
+                  width: calc(100% - 16px);
+                  padding: 8px;
+                  display: flex;
+                  height: max-content;
+                  min-height: 60px;
+                  margin-bottom: 10px;
+                  border-radius: 12px;
+                  box-shadow: 2px 2px 4px -2px black;
+
+                  td{
+                        @include block-style(flex, center, center);
+                        height: max-content;
+                        padding: 0;
+                        height: 100%;
+                        box-sizing: border-box;
+                        min-height: inherit;
+                        text-align: center;
+                        border-right: 1px solid #dedede;
+
+                        &:last-child{
+                              border: none;
+                        }
+
+                        &.dataTables_empty{
+                              width: 100% !important;
+                              min-width: 100% !important;
+                        }
+                  }
+            }
+      }
+
+      // Таблица для региональных менеджеров
+      &#leads.table{
+            tr{
+                  th, td{
+                        border-bottom: none;
+                        border-top: none;
+                        padding: 0;
+                        height: max-content;
+                        height: 100%;
+                        box-sizing: border-box;
+                        min-height: inherit;
+                        text-align: center;
+                        @include block-style(flex, center, center);
+                        
+                        // Лид
+                        &:first-child{
+                              flex-grow: 1;
+                              max-width: 5%;
+                              min-width: 5%;
+                        }
+
+                        // Дата
+                        &:nth-child(2){
+                              flex-grow: 1;
+                              max-width: 7%;
+                              min-width: 7%;
+                              @include text-style(10px, 400, #646464);
+                        }
+
+                        // Регион
+                        &:nth-child(3){
+                              flex-grow: 1;
+                              max-width: 10%;
+                              min-width: 10%;
+                              @include text-style(11px, 500, #646464);
+                        }
+
+                        // Имя
+                        &:nth-child(4){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                              a{
+                                    @include text-style(13px, 500, #646464);
+                                    background: transparent;
+                                    border: none;
+                                    white-space: normal;
+                              }
+                              position: relative;
+                        }
+
+                        // Телефон
+                        &:nth-child(5){
+                              flex-grow: 1;
+                              max-width: 10%;
+                              min-width: 10%;
+                              @include text-style(13px, 500, #646464);
+                        }
+
+                        // Статус
+                        &:nth-child(6){
+                              flex-grow: 1;
+                              max-width: 11%;
+                              min-width: 11%;
+                              display: flex;
+                              flex-direction: column;
+                              padding: 0 5px;
+                          
+                              select{
+                                    height: 20px;
+                                    padding: 0px 10px;
+                                    text-align: center;
+                                    font-size: 12px;
+                                    border-radius: 5px 5px 0 0;
+                              }
+
+                              .status-title{
+                                    height: 20px;
+                                    text-align: center;
+                                    font-size: 11px;
+                                    border-radius: 5px 5px 0 0;
+                                    border: 1px solid #dedede;
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                              }
+                        }
+
+                        // Мененджер
+                        &:nth-child(7){
+                              flex-grow: 1;
+                              max-width: 20%;
+                              min-width: 20%;
+                              @include text-style(13px, 400, #646464);  
+                        }
+
+                        // Комментарий
+                        &:nth-child(8){
+                              flex-grow: 1;
+                              max-width: 22%;
+                              min-width: 22%;
+                        }
+
+                        &:nth-child(9){
+                              flex-grow: 1;
+                              max-width: 4%;
+                              min-width: 4%;
+
+                              .btn-info{
+                                    color: #de3f18;
+                                    background: transparent;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                              }
+                        }
+                  }
+            }
+      }
+
+      &#leads.table-manager{
+            tr{
+                  th, td{
+                        border-bottom: none;
+                        border-top: none;
+                        padding: 0;
+                        height: max-content;
+                        
+
+                         // Лид
+                        &:first-child{
+                              flex-grow: 1;
+                              max-width: 4%;
+                              min-width: 4%;
+                        }
+
+                        // Дата
+                        &:nth-child(2){
+                              flex-grow: 1;
+                              max-width: 7%;
+                              min-width: 7%;
+                              @include text-style(10px, 400, #646464);
+                        }
+
+                        // Регион
+                        &:nth-child(3){
+                              flex-grow: 1;
+                              max-width: 9%;
+                              min-width: 9%;
+                              @include text-style(11px, 500, #646464);
+                        }
+
+                        // Имя
+                        &:nth-child(4){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                              position: relative;
+                              a{
+                                    @include text-style(13px, 500, #646464);
+                                    background: transparent;
+                                    border: none;
+                                    white-space: normal;
+                              }
+                        }
+
+                        // Телефон
+                        &:nth-child(5){
+                              flex-grow: 1;
+                              max-width: 10%;
+                              min-width: 10%;
+                              @include text-style(13px, 500, #646464);
+                        }
+
+                        // Статус
+                        &:nth-child(6){
+                              flex-grow: 1;
+                              max-width: 12%;
+                              min-width: 12%;
+                        }
+
+                        // Мененджер
+                        &:nth-child(7){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                        }
+                        
+                        // Комментарий
+                        &:nth-child(8){
+                              flex-grow: 1;
+                              max-width: 16%;
+                              min-width: 16%;
+                              padding: 0 2px;
+
+                              textarea{
+                                    height: 60px;
+                                    resize: none;
+                                    border: none;
+                                    box-shadow: none;
+                              }
+                        }
+
+                        // Дейст
+                        &:nth-child(9){
+                              flex-grow: 1;
+                              max-width: 8%;
+                              min-width: 8%;
+                              padding: 0 2px;
+
+                              .btn_agree{
+                                    @include text-style(9px, 400, #f9f9f9 );
+                                    white-space: normal;
+                                    width: 100%;
+                                    height: 60px;
+                                    padding: 0;
+                                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+                                    border-radius: 8px;
+                                    background-image: linear-gradient(177deg, #ffffff -80%, #5b9eae 57%);
+                                    border: 2px solid #5b9ead;
+                                    text-shadow: 1px 1px 5px black;
+                              }
+                        }
+
+                        // Отказ
+                        &:nth-child(10){
+                              flex-grow: 1;
+                              max-width: 4%;
+                              min-width: 4%;
+
+                              .btn_defect{
+                                    color: #de3f18;
+                                    background: transparent;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                              }
+                        }
+                  }
+            }
+      }
+
+      &#leads.table-manager-canceled{
+            tr{
+                  th, td{
+                        border-bottom: none;
+                        border-top: none;
+                        padding: 0;
+                        height: max-content;
+                        
+
+                         // Лид
+                        &:first-child{
+                              flex-grow: 1;
+                              max-width: 4%;
+                              min-width: 4%;
+                        }
+
+                        // Дата
+                        &:nth-child(2){
+                              flex-grow: 1;
+                              max-width: 7%;
+                              min-width: 7%;
+                              @include text-style(10px, 400, #646464);
+                        }
+
+                        // Регион
+                        &:nth-child(3){
+                              flex-grow: 1;
+                              max-width: 9%;
+                              min-width: 9%;
+                              @include text-style(11px, 500, #646464);
+                        }
+
+                        // Имя
+                        &:nth-child(4){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                              position: relative;
+                              a{
+                                    @include text-style(13px, 500, #646464);
+                                    background: transparent;
+                                    border: none;
+                                    white-space: normal;
+                              }
+                        }
+
+                        // Телефон
+                        &:nth-child(5){
+                              flex-grow: 1;
+                              max-width: 10%;
+                              min-width: 10%;
+                              @include text-style(13px, 500, #646464);
+                        }
+
+                        // Статус
+                        &:nth-child(6){
+                              flex-grow: 1;
+                              max-width: 12%;
+                              min-width: 12%;
+                        }
+
+                        // Мененджер
+                        &:nth-child(7){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                        }
+                        
+                        // Комментарий
+                        &:nth-child(8){
+                              flex-grow: 1;
+                              max-width: 23%;
+                              min-width: 23%;
+                              padding: 0 2px;
+
+                              textarea{
+                                    height: 60px;
+                                    resize: none;
+                                    border: none;
+                                    box-shadow: none;
+                              }
+                        }
+
+                        // Отказ
+                        &:nth-child(9){
+                              flex-grow: 1;
+                              max-width: 5%;
+                              min-width: 5%;
+
+                              .btn{
+                                    color: #de3f18;
+                                    background: transparent;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                    border: none;
+                                    transform: rotate(45deg);
+                                    font-size: 25px;
+                              }
+                        }
+                  }
+            }
+      }
+
+      &#leads.promo-lead{
+            tr{
+                  th, td{
+                        border-bottom: none;
+                        border-top: none;
+                        padding: 0;
+                        height: max-content;
+                        
+                        &:first-child{
+                              flex-grow: 1;
+                              max-width: 10%;
+                              min-width: 10%;
+                        }
+
+                        &:nth-child(2){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                              @include text-style(10px, 400, #646464);
+                        }
+
+                        &:nth-child(3){
+                              flex-grow: 1;
+                              max-width: 20%;
+                              min-width: 20%;
+                              @include text-style(11px, 500, #646464);
+                        }
+
+                        &:nth-child(4){
+                              flex-grow: 1;
+                              max-width: 15%;
+                              min-width: 15%;
+                              position: relative;
+                        }
+
+                        &:nth-child(5){
+                              flex-grow: 1;
+                              max-width: 20%;
+                              min-width: 20%;
+                              @include text-style(13px, 500, #646464);
+                        }
+
+                        &:nth-child(6){
+                              flex-grow: 1;
+                              max-width: 20%;
+                              min-width: 20%;
+                        }
+                  }
+            }
+      }
+}

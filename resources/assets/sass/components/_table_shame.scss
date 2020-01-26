@@ -1,0 +1,25 @@
+.dataTables_wrapper{
+      position: relative;
+
+      .dataTables_filter{
+            display: none;
+      }
+
+      .dataTables_length{
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+      }
+
+      .dataTables_paginate {
+            position: absolute;
+            left: 40%;
+      }
+
+      .table{
+            background: none;
+            width: 100% !important;
+            margin-bottom: 25px !important;
+            margin-top: 0 !important;
+      }
+}
