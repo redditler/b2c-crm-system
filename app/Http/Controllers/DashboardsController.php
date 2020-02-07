@@ -188,7 +188,7 @@ class DashboardsController extends Controller
                         'userGroup'     => $groupId
                     ]
                 ),
-                'telephony' => json_decode(file_get_contents('http://172.17.3.40/api/EKlkYkxSDyEo2D61nONo8kVP9w1NT2yE/usage-by-channel?channel='.$groupId.
+                'telephony' => json_decode(file_get_contents('https://stat.steko.com.ua/api/EKlkYkxSDyEo2D61nONo8kVP9w1NT2yE/usage-by-channel?channel='.$groupId.
                         '&beginPeriod='.strtotime($sessionValues['leadDateFrom']).'&endPeriod='.strtotime($sessionValues['leadDateTo']))),
                 'plan'      => self::buildMonthlyPlan(strtotime($sessionValues['leadDateFrom']), strtotime($sessionValues['leadDateTo']), $groupId)
             ];

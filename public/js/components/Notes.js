@@ -16,7 +16,6 @@ class Notes {
             $('.content-wrapper').append(el);
 
             setTimeout(() =>  $("#notes").addClass('show') , 300);
-            setTimeout(() =>  $("#notes").removeClass('show') , this.data.timer);
-            setTimeout(() =>  $("#notes").remove() , this.data.timer + 300);
+            setTimeout(() =>  $("#notes").removeClass('show').remove() , this.data.timer);
       }
 }

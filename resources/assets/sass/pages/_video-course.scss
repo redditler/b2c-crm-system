@@ -1,0 +1,189 @@
+.content__wrapper[data-id="video-course"]{
+      .video-course{
+            background-color: #f8f9f9;
+
+            .container__content{
+                  .content__admin-control{
+                        position: absolute;
+                        right: 10px;
+                        z-index: 99;
+                        top: 35px;
+                        display: flex;
+
+                        .btn{
+                              margin-left: 10px;
+                        }
+                  }
+                  .content__wrapper{
+                        .content__video-category{
+                              background: #e0e7e9;
+                              width: calc(100% + 80px);
+                              position: relative;
+                              left: -40px;
+                              height: 100px;
+                              top: -45px;
+                              padding: 20px;
+                              border-radius: 20px;
+                              display: flex;
+                              align-items: center;
+
+                              .btn{
+                                    box-shadow: 2px 2px 7px -2px black;
+                              }
+                        }
+
+                        .content__video-list{
+                              width: calc(100% + 80px);
+                              position: relative;
+                              left: -40px;
+                              top: -25px;
+
+                              display: flex;
+                              flex-wrap: wrap;
+                              justify-content: space-between;
+                        }
+                  }
+            }
+      }
+}
+
+.video__panel{
+      height: 355px;
+      min-width: 355px;
+      background: #E0E7E9;
+      border-radius: 25px;
+      max-width: 355px;
+      padding: 0 24px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 25px;
+
+      &.show{
+            .panel__full-description{
+                  height: 308px;
+            }
+      }
+
+      .panel__head{
+            height: 65px;
+            display: flex;
+            align-items: center;
+
+            .video--title{
+                  @include text-style(14px, 500, #2B353E);
+            }
+      }
+
+      .panel__body{
+            .video__wrapper{
+                  height: 150px;
+
+                  video{
+                        width: 100%;
+                        height: 100%;
+                  }
+            }
+
+            .video__subscription{
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 7px 0 5px;
+                  border-bottom: 1px solid #909DA1;
+
+                  .video__autor{
+                        @include text-style(10px, 500, #909DA1);
+                  }
+                  .video__veiws{
+                        @include text-style(10px, 500, #909DA1);
+                  }
+            }
+
+            .video__description{
+                  height: 70px;
+                  margin-top: 10px;
+
+                  .description{
+                        height: 100%;
+
+                        .more-veiw{
+                              cursor: pointer;
+                              color: steelblue;
+                        }
+                  }
+            }
+      }
+
+      .panel__footer{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            left: 0px;
+            text-align: left;
+            padding: 10px 20px;
+            background: #D0DBDE;
+
+            .video__logs{
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-end;
+                  .logs{
+
+                  }
+            }
+
+            .video__editor{
+                  position: absolute;
+                  .btn{
+                        background: transparent;
+                        border: none;
+                        color: #707070;
+                        padding: 0 5px;
+                  }
+            }
+      }
+
+      .panel__full-description{
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 37px;
+            background: #F8F9F9;
+            border-radius: 15px 15px 0 0;
+            overflow: hidden;
+            height: 0;
+            transition: all 0.3s ease;
+
+            .full-description__head{
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  padding: 12px 12px 5px;
+
+                  .colse__btn{
+                        background: #DE3F18;
+                        border: none;
+                        border-radius: 50%;
+                        color: #fff;
+                        padding: 3px 7px;
+                        font-weight: 100;
+                        font-family: Montserrat;
+
+                        &:focus,
+                        &:active{
+                              outline: none;
+                        }
+                  }
+            }
+
+            .full-description__body{
+                  height: calc(100% - 36px);
+                  padding: 0 15px;
+                  
+                  .full-description{
+                        @include text-style(13px, 500, #2B353E);
+                  }
+            }
+      }
+}

@@ -1,21 +1,198 @@
 @extends('adminlte::page')
 
-@section('content_header')
-    <h1 class="content_header__h1">Видео-курсы</h1>
-@endsection
-
 @section('content')
-	@if(Auth::user()->role_id == 1)
-	<button class="btn btn-success" id="upload">Загрузить новое видео</button>
-	<button class="btn btn-success" id="categories">Управление разделами</button>
-	<button class="btn btn-success" id="videoViews">Просмотры видео</button>
-	@endif
-	@if(count($videos)>0)
+	<section class="content__wrapper title-style" data-id="video-course">
+		<div class="container video-course">
+		    <div class="container__title">
+			  <h1 class="title">Video курсы</h1>
+		    </div>
+		    <div class="container__content">
+				@if(Auth::user()->role_id == 1)
+				<div class="content__admin-control">
+					<button class="btn btn--default blue" id="upload">Загрузить новое видео</button>
+					<button class="btn btn--default blue" id="categories">Управление разделами</button>
+					<button class="btn btn--default blue" id="videoViews">Просмотры видео</button>
+				</div>
+				@endif
+
+				<div class="content__wrapper">
+					@if(count($videos)>0)
+					@foreach($videos as $thisCatId=>$thisVideo)
+					<div class="content__video-category">
+						<a class="btn btn--default"href="{{ route('videocourses.detailed', $thisCatId) }}">{{ $thisVideo['title'] }}</a>
+					</div>
+					<div class="content__video-list">
+						@foreach($thisVideo['videos'] as $thisVideo)
+							<div class="video__panel panel-{{$thisVideo->id}}">
+								<div class="panel__head">
+									<span class="video--title">{{ $thisVideo->video_title }}</span>
+								</div>
+								<div class="panel__body">
+									<div class="video__wrapper">
+									@if(Auth::user()->id == $thisVideo->uploaded_by)
+										<video 
+											poster="/img/video-poster.png"
+											id="video{{ $thisVideo->id }}"
+											data-id="{{ $thisVideo->id }}" 
+											data-title="{{ $thisVideo->video_title }}"
+											data-description="{{ str_replace(["\r\n", "\n", "\""], ['{nl}', '{nl}', '{quot}'], $thisVideo->video_description) }}"
+											data-category="{{ $thisVideo->category }}"
+											data-groups="{{ ($thisVideo->visible_groups == "any" ? 'any' : str_replace('"', '\'', $thisVideo->visible_groups)) }}"
+											data-users="{{ ($thisVideo->visible_users == "any" ? 'any' : str_replace('"', '\'', $thisVideo->visible_users)) }}"
+											
+											controlsList="nodownload">
+									@else
+										<video 
+											poster="/img/video-poster.png"
+											id="video{{ $thisVideo->id }}"
+											style="width:100%;" 
+											data-id="{{ $thisVideo->id }}" 
+											
+											controlsList="nodownload">
+									@endif
+											<source src="{{ $thisVideo->url }}" type="video/mp4">
+										</video>
+									</div>
+									<div class="video__subscription">
+										<span class="video__autor"><i class="fa fa-user"></i> {{ $thisVideo->uploader }}</span>
+										<span class="video__veiws"><i class="fa fa-eye"></i> 
+										@if((\Illuminate\Support\Facades\Auth::user()->id == 103) || (\Illuminate\Support\Facades\Auth::user()->id == 151))
+										<a href="{{ route('videocourses.getViewsByID', $thisVideo->id) }}">{{ $thisVideo->views }}</a>
+										@else
+										{{ $thisVideo->views }}
+										@endif
+										</span>
+									</div>
+									<div class="video__description">
+										<span class="description">
+											<span>{!! substr(($thisVideo->video_description), 0, 140 )!!}</span>
+											@if(strlen($thisVideo->video_description) > 139)
+												<span class="more-veiw" data-id="panel-{{ $thisVideo->id }}">... подробнee</span>
+											@endif
+										</span>
+									</div>
+								</div>
+								<div class="panel__footer">
+									@if(Auth::user()->id == $thisVideo->uploaded_by)
+									<div class="video__editor">
+										<button class="btn btn-sm btn-default video-edit" data-id="{{ $thisVideo->id }}">
+											<i class="fa fa-pencil"></i>
+										</button>
+									</div>
+									@endif
+									<div class="video__logs">
+										<span class="logs">Загружено {{ $thisVideo->created_at_string }}</span>
+									</div>
+								</div>
+								<div class="panel__full-description">
+									<div class="full-description__head">
+										<button class="colse__btn">x</button>
+									</div>
+									<div class="full-description__body">
+										<p class="full-description">
+											{!! str_replace(["\r\n", "\n"], '<br>', $thisVideo->video_description) !!}
+										</p>
+									</div>
+								</div>
+							</div>	
+						@endforeach
+					</div>
+					@endforeach
+					@else
+						<div class="alert alert-info" style="margin-top:25px;">
+							Нет данных для отображения.
+						</div>
+					@endif
+				</div>
+		    </div>
+		</div>
+	</section>
+
+	{{-- @if(Auth::user()->role_id == 1)
+		<button class="btn btn-success" id="upload">Загрузить новое видео</button>
+		<button class="btn btn-success" id="categories">Управление разделами</button>
+		<button class="btn btn-success" id="videoViews">Просмотры видео</button>
+	@endif --}}
+
+	
+	{{-- @if(count($videos)>0)
 	<div class="row" style="margin-top:25px;">
 		@foreach($videos as $thisCatId=>$thisVideo)
 		<div class="col-sm-12"><h1><a href="{{ route('videocourses.detailed', $thisCatId) }}">{{ $thisVideo['title'] }}</a></h1></div>
+
 			@foreach($thisVideo['videos'] as $thisVideo)
-			<div class="col-md-4 video-panel">
+			<div class="video__panel panel-{{$thisVideo->id}}">
+				<div class="panel__head">
+					<span class="video--title">{{ $thisVideo->video_title }}</span>
+				</div>
+				<div class="panel__body">
+					<div class="video__wrapper">
+					@if(Auth::user()->id == $thisVideo->uploaded_by)
+						<video 
+							id="video{{ $thisVideo->id }}"
+							data-id="{{ $thisVideo->id }}" 
+							data-title="{{ $thisVideo->video_title }}"
+							data-description="{{ str_replace(["\r\n", "\n", "\""], ['{nl}', '{nl}', '{quot}'], $thisVideo->video_description) }}"
+							data-category="{{ $thisVideo->category }}"
+							data-groups="{{ ($thisVideo->visible_groups == "any" ? 'any' : str_replace('"', '\'', $thisVideo->visible_groups)) }}"
+							data-users="{{ ($thisVideo->visible_users == "any" ? 'any' : str_replace('"', '\'', $thisVideo->visible_users)) }}"
+							controls
+							controlsList="nodownload">
+					@else
+						<video 
+							id="video{{ $thisVideo->id }}"
+							style="width:100%;" 
+							data-id="{{ $thisVideo->id }}" 
+							controls
+							controlsList="nodownload">
+					@endif
+							<source src="{{ $thisVideo->url }}" type="video/mp4">
+						</video>
+					</div>
+					<div class="video__subscription">
+						<span class="video__autor"><i class="fa fa-user"></i> {{ $thisVideo->uploader }}</span>
+						<span class="video__veiws"><i class="fa fa-eye"></i> 
+						@if((\Illuminate\Support\Facades\Auth::user()->id == 103) || (\Illuminate\Support\Facades\Auth::user()->id == 151))
+						<a href="{{ route('videocourses.getViewsByID', $thisVideo->id) }}">{{ $thisVideo->views }}</a>
+						@else
+						{{ $thisVideo->views }}
+						@endif
+						</span>
+					</div>
+					<div class="video__description">
+						<span class="description">
+							<span>{!! substr(($thisVideo->video_description), 0, 140 )!!}</span>
+							@if(strlen($thisVideo->video_description) > 139)
+								<span class="more-veiw" data-id="panel-{{ $thisVideo->id }}">... подробнee</span>
+							@endif
+						</span>
+					</div>
+				</div>
+				<div class="panel__footer">
+					@if(Auth::user()->id == $thisVideo->uploaded_by)
+					<div class="video__editor">
+						<button class="btn btn-sm btn-default video-edit" data-id="{{ $thisVideo->id }}">
+							<i class="fa fa-pencil"></i>
+						</button>
+					</div>
+					@endif
+					<div class="video__logs">
+						<span class="logs">Загружено {{ $thisVideo->created_at_string }}</span>
+					</div>
+				</div>
+				<div class="panel__full-description">
+					<div class="full-description__head">
+						<button class="colse__btn">x</button>
+					</div>
+					<div class="full-description__body">
+						<p class="full-description">
+							{!! str_replace(["\r\n", "\n"], '<br>', $thisVideo->video_description) !!}
+						</p>
+					</div>
+				</div>
+			</div> --}}
+
+			{{-- <div class="col-md-4 video-panel">
 				<div class="panel">
 					<div class="panel-head" style="padding-left: 20px;"><h4>{{ $thisVideo->video_title }}</h4></div>
 					<div class="panel-body">
@@ -39,6 +216,7 @@
 							controls
 							controlsList="nodownload">
 				@endif
+
 							<source src="{{ $thisVideo->url }}" type="video/mp4">
 						</video>
 						<div class="row" style="border-bottom:1px dotted #dedede;padding-bottom:5px;color:#8e8e8e;">
@@ -91,15 +269,15 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			@endforeach
+			</div> --}}
+			{{-- @endforeach
 		@endforeach
 	</div>
 	@else
 		<div class="alert alert-info" style="margin-top:25px;">
 			Нет данных для отображения.
 		</div>
-	@endif
+	@endif --}}
 	@if(Auth::user()->role_id == 1)
 <div id="uploadNewVideo" class="modal" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
@@ -433,5 +611,24 @@
 		$('#uploadErreurs').html(retnErrors);
 		$('#uploadErreursMain').fadeIn();
 	@endif
+
+	$('.more-veiw').on('click', function(){
+		let selector = '.' + $(this).attr('data-id');
+		$(selector).addClass('show');
+		$(selector).mouseleave(function(){
+			$(selector).removeClass('show');
+		});
+		$(`${selector} .colse__btn`).on('click', function(){
+			$(selector).removeClass('show');
+		})
+	});
+
+	$('body').on('mouseenter', '.video__panel  video', function(){
+		$(this).attr("controls", true);
+	});
+
+	$('body').on('mouseleave', '.video__panel  video', function(){
+		$(this).removeAttr("controls");
+	})
 </script>
 @endsection

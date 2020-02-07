@@ -70,7 +70,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- DatePicker -->
-    <script src="/js/datepicker-ru.js"></script>
+    <script src="{{ asset('js/datepicker-ru.js') }}"></script>
 
     <!-- Select2 -->
     @if(config('adminlte.plugins.select2'))

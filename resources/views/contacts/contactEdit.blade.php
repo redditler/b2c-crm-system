@@ -391,6 +391,23 @@
                 contactEditor.updateName();
             })
             
+            // Добавить заметку
+             $('#sendEventBtn').on('click', ()=>{
+                $.ajax({
+                    url: '/events',
+                    method: `post`,
+                    data: $('#setEvent').serializeArray(),
+                    success: (response) =>{
+                        let note = new Notes({
+                              status: 'success',
+                              content: 'Заметка создана!',
+                              timer: '2000'
+                        }).create();
+                        $('#closeEventModal').click();
+                    }
+                })
+            })
+            
             // Изменить информацию о клиенте(Администратор)
             $('#sendAdminClientInfo').on('click', ()=>{
                 contactEditor.updateAdmin();

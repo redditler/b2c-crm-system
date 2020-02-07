@@ -19,6 +19,12 @@ class UpdaterLead{
                   type: 'post',
                   data: data,
                   success: function (response) {
+                        let note = new Notes({
+                              status: 'success',
+                              content: 'Лид обновленн!',
+                              timer: '2000'
+                        }).create();
+
                         reloadTable();
                   }
             });
@@ -85,6 +91,11 @@ class UpdaterLead{
                         },
                         success: function(response){
                               $('#discardingLead').click();
+                              let note = new Notes({
+                                    status: 'success',
+                                    content: 'Лид удален!',
+                                    timer: '2000'
+                              }).create();
                               reloadTable();
                         }
                   })

@@ -122,9 +122,10 @@
             padding: 40px 20px 60px;
 
             #cardList{
-                  @include block-style(flex, space-between, flex-start);
+                  @include block-style(flex, flex-start, flex-start);
                   flex-wrap: wrap;
                   padding: 0 20px;
+                  margin: 0 -35px;
             }
       }
 
@@ -132,7 +133,7 @@
             border: 5px solid white;
             height: 210px;
             width: 285px;
-            margin-bottom: 40px;
+            margin: 0 2.5vw 35px;
             background: url(/img/texture.png) no-repeat;
             background-size: cover;
             border-radius: 13px;

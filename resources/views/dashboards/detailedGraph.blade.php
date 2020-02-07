@@ -90,6 +90,7 @@
 @endsection
 
 @section('tmp_js')
+<script type="text/javascript" src="{{ asset('js/bootstrap-multiselect.js ') }}"></script>
     <script>
 
         $('.multiselect-ui').multiselect({

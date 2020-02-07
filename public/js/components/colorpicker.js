@@ -36,6 +36,7 @@ const colorpicker = (selector) =>{
 
       $('body').on('click', '.color', function(){
             $('.colorpicker__label .current-value').css('background', $(this).attr('data-id'));
-      })
-};
+            $('#color_event').val($(this).attr('data-id'));
+      });
+};    
 

@@ -275,8 +275,13 @@ Route::group(['middleware' => ['auth', '2fa', 'isWorking']], function () {
     //----------------------Callscripts
     Route::get('/callscripts', 'CallscriptsHomeController@begin')->name('callscriptsBegin');
     Route::post('/callscripts/questionnaire', 'CallscriptsHomeController@getQuestion')->name('callscriptsGetQuestion');
-    Route::post('/callscripts/noticements', 'CallscriptsHomeController@getNoticements')->name('callscriptsGetNoticements');
+    Route::post('/callscripts/getNoticements', 'CallscriptsHomeController@getNoticements')->name('callscriptsGetNoticements');
     Route::post('/callscripts/improve', 'CallscriptsHomeController@improveQuestion')->name('callscriptsImproveQuestion');
+
+    Route::get('/callscripts/getTopicCall', 'CallscriptsHomeController@getTopicCall')->name('callscriptsGetTopicCall');
+    Route::post('/callscripts/getQuickQuestion', 'CallscriptsHomeController@getQuickQuestion')->name('callscriptsGetQuickQuestion');
+    
+    
     //----------------------Callscripts
 
 //    Route::resource('contacts', 'ContactsController', [

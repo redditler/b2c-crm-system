@@ -35,11 +35,12 @@
   '../../resources/assets/sass/components/status-bar',
   '../../resources/assets/sass/components/collection',
   '../../resources/assets/sass/components/notes',
-  '../../resources/assets/sass/components/button';
+  '../../resources/assets/sass/components/button'; 
 
 // 6. Page-specific styles
 @import
   '../../resources/assets/sass/pages/login-page',
+  '../../resources/assets/sass/pages/organizer',
   '../../resources/assets/sass/pages/living-type',
   '../../resources/assets/sass/pages/contact-list',
   '../../resources/assets/sass/pages/client-edit',
@@ -47,6 +48,8 @@
   '../../resources/assets/sass/pages/canceled',
   '../../resources/assets/sass/pages/promo',
   '../../resources/assets/sass/pages/statistic',
+  '../../resources/assets/sass/pages/dashbords',
+  '../../resources/assets/sass/pages/video-course',
   '../../resources/assets/sass/pages/home';
 
 // 7. Themes

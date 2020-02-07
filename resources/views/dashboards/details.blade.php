@@ -1,11 +1,5 @@
 @extends('adminlte::page')
 
-@section('content_header')
-    <div class="headerNamePage">
-        <h2 style="color:white">Dashboards</h2>
-    </div>
-@stop
-
 @section('content')
     <div>
         <div class="filter_menu">
@@ -35,6 +29,7 @@
     </div>
 @endsection
 @section('tmp_js')
+<script type="text/javascript" src="{{ asset('/js/bootstrap-multiselect.js ') }}"></script>
     <script>
         let init = {
             all: [],

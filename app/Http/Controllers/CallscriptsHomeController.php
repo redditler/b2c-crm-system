@@ -113,7 +113,7 @@ class CallscriptsHomeController extends Controller
     		->with('topics', $getCallTopics)
             ->with('improvementsQ', $improvementsQ)
             ->with('logLength', $logLength);
-    }
+	}
 
     public function removeAnswer(Request $request)
     {
@@ -189,6 +189,25 @@ class CallscriptsHomeController extends Controller
 			];
     	}
     	return response()->json($return);
-    }
+	}
+	
+	public function getTopicCall(Request $request)
+	{
+		$getCallTopics = Topics::get();
 
+		$response = [
+			'topics'		=> $getCallTopics, 
+		];
+		return response() -> json($response);
+	}
+
+	public function getQuickQuestion(Request $request)
+	{
+		$getQuickQuestions = Questions::where('topic', $request->input('topic'))->where('parent_id', -2)->where('type', 3)->get();
+		
+		$response = [
+			'quick'		=> $getQuickQuestions, 
+		];
+		return response() -> json($response);
+	}
 }

@@ -85,29 +85,4 @@ const showAddFilters = () => {
     })
 }
 
-// Панель выбора цвета в создани заметки
-// $('.current-color-event').on('click', function () {
-    //Value number color
-    // let eventColors = ['#01b6cf', '#3f4f67', '#213054', '#1f949e', '#006068', '#d1905f', '#f47a7f', '#ff939c', '#f9b988'];
-
-    // let colorList = $('.color-list-for-event');
-    // let currentColor = $('.current-color-event');
-    // let currentValueOfColorList = $('.color-list-for-event').css('display');
-
-    // Open/Close list cahnge colors
-    // if(currentValueOfColorList == 'none'){
-    //     colorList.show(200);
-    //     colorList.css('display', 'flex');
-    // }else{
-    //     colorList.hide(200);
-    // }
-//     // Add event on click at color
-//     for(let i = 0; i < eventColors.length; i++){
-//         $('.color-event-' + (i+1)).on('click', function () {
-//             colorList.hide(200);
-//             currentColor.css('background-color', eventColors[i]);
-//             $('#color_event').val(eventColors[i]);
-//         });
-//     }
-// })
 

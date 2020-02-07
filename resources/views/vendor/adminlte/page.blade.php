@@ -142,6 +142,13 @@
                         </a>
                     </div>
 
+                    <!-- Видео-курсы -->
+                    <div class="sidebar__item" id="video_courses">
+                        <a href="{{route('videocourses.index')}}" class="sidebar__link">
+                            <span class="link--title">Видео-курсы</span>
+                        </a>
+                    </div>
+
                      @if(\Illuminate\Support\Facades\Auth::user()->role_id == 1)
                     <!-- Органайзер -->
                     <div class="sidebar__item" id="dashboards">
@@ -150,15 +157,6 @@
                         </a>
                     </div>
 
-
-                    @if((\Illuminate\Support\Facades\Auth::user()->id == 103) || (\Illuminate\Support\Facades\Auth::user()->id == 151))
-                    <!-- Видео-курсы -->
-                    <div class="sidebar__item" id="video_courses">
-                        <a href="{{route('videocourses.index')}}" class="sidebar__link">
-                            <span class="link--title">Видео-курсы</span>
-                        </a>
-                    </div>
-                    @endif
 
                     <!-- Настройки -->
                     <div class="sidebar__item treeview" id="setting">

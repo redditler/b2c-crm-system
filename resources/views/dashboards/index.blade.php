@@ -1,133 +1,209 @@
 @extends('adminlte::page')
 
-@section('content_header')
-    <div class="headerNamePage">
-        <h1>Dashboards</h1>
-    </div>
-@stop
-
 @section('content')
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-min.css">
 
-    <div>
-        <div class="filter_menu">
-            <form id="leadDatePicker">
-                <div class="filter_box">
-                    <div class="form-group form-group-sm filter_leads_group flex block_filter">
-                        <span>Дата</span>
-                        <input type="date" name="leadDateFrom" id="leadDateFrom"
-                               class="form-control input-sm"
-                               value="{{!empty(request()->session()->get('period')) ? request()->session()->get('period')['leadDateFrom'] : \Carbon\Carbon::make(\App\Leed::dateFromLead()[0])->format('Y-m-d')}}">
-                        <input type="date" name="leadDateTo" id="leadDateTo"
-                               class="form-control input-sm"
-                               value="{{!empty(request()->session()->get('period')) ? request()->session()->get('period')['leadDateTo'] : \Carbon\Carbon::make(\App\Leed::dateFromLead()[1])->format('Y-m-d')}}">
+    <section class="content__wrapper title-style" data-id="dashboards">
+        <div class="container dashboards-filters">
+            <div class="container__title">
+                <h1 class="title">Dashboards</h1>
+            </div>
+            <div class="container__content">
+                {{-- <form id="leadDatePicker"> --}}
+                    <div class="filter_box">
+                        <div class="form-group form-group-sm filter_leads_group flex block_filter">
+
+                            <div class="filter filter__date">
+                                <div class="filter__title">
+                                    <span class="title">Дата</span>
+                                </div>
+                                <div class="filter__content">
+                                    <label class="filter__from">
+                                        <div class="filter__icon">
+                                            <span class="icon--title">с</span>
+                                            <i class="icon fa fa-chevron-down"></i>
+                                        </div>
+                                        <input 
+                                            value="{{!empty(request()->session()->get('period')) ? request()->session()->get('period')['leadDateFrom'] : \Carbon\Carbon::make(\App\Leed::dateFromLead()[0])->format('Y-m-d')}}" 
+                                            class="filter__input datepicker" 
+                                            name="leadDateFrom" 
+                                            id="leadDateFrom" 
+                                            type="text">
+                                    </label>
+                                    <label class="filter__to">
+                                        <div class="filter__icon">
+                                            <span class="icon--title">по</span>
+                                            <i class="icon fa fa-chevron-down"></i>
+                                        </div>
+                                        <input 
+                                            value="{{!empty(request()->session()->get('period')) ? request()->session()->get('period')['leadDateTo'] : \Carbon\Carbon::make(\App\Leed::dateFromLead()[1])->format('Y-m-d')}}" 
+                                            class="filter__input datepicker"
+                                            name="leadDateTo" 
+                                            id="leadDateTo" 
+                                            type="text">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group_filter block_filter flex">
+                        @if(\Illuminate\Support\Facades\Auth::user()->role_id == 1)
+                            <span class="title">Группа</span>
+                            <label>
+                                <select name="user_group_id[]" id="userGroup"
+                                        class="multiselect-ui form-control form-control-sm">
+                                        <option value="2" {{ isset(request()->session()->get('period')['userGroup']) ? (request()->session()->get('period')['userGroup'] == 2 ? 'selected' : '') : '' }}>Розница</option>
+                                        <option value="1" {{ isset(request()->session()->get('period')['userGroup']) ? (request()->session()->get('period')['userGroup'] == 1 ? 'selected' : '') : '' }}>Онлайн</option>
+                                        <option value="4" {{ isset(request()->session()->get('period')['userGroup']) ? (request()->session()->get('period')['userGroup'] == 4 ? 'selected' : '') : '' }}>DIY</option>
+                                </select>
+                            </label>
+                        @endif
+                        </div>
                     </div>
-                    <div class="group_filter block_filter flex">
-                    @if(\Illuminate\Support\Facades\Auth::user()->role_id == 1)
-                        <span>Группа</span>
-                        <label>
-                            <select name="user_group_id[]" id="userGroup"
-                                    class="multiselect-ui form-control form-control-sm">
-                                    <option value="2" {{ isset(request()->session()->get('period')['userGroup']) ? (request()->session()->get('period')['userGroup'] == 2 ? 'selected' : '') : '' }}>Розница</option>
-                                    <option value="1" {{ isset(request()->session()->get('period')['userGroup']) ? (request()->session()->get('period')['userGroup'] == 1 ? 'selected' : '') : '' }}>Онлайн</option>
-                                    <option value="4" {{ isset(request()->session()->get('period')['userGroup']) ? (request()->session()->get('period')['userGroup'] == 4 ? 'selected' : '') : '' }}>DIY</option>
-                            </select>
-                        </label>
-                    @endif
-                    </div>
-                </div>
-            </form>
+                {{-- </form> --}}
+            </div>
         </div>
-
-        <div class="dashboards-container">
-            <div class="row" style="margin-bottom:500px;margin-top:15px;">
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Конверсия</h4>
-                        <div class="dashboard-detailed" data-link="{{ route('Dashboards.detailedGraph', 'conversion') }}" data-spinner="false">Подробнее</div>
-                        <canvas id="conversionSummary" height="250"></canvas>
+        <div class="dashboards__list pure-g">
+            <div class="container__wrapper conversionSummary pure-u-2-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title">Конверсия</span>
+                        <button class="btn btn--default" data-link="{{ route('Dashboards.detailedGraph', 'conversion') }}" data-spinner="false">Подробнее</button>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="conversionSummary" width="250" height="120"></canvas>
                     </div>
                 </div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Эффективность регионов</h4>
-                        <div class="dashboard-detailed" data-link="{{ route('Dashboards.detailedGraph', 'conversion') }}" data-spinner="false">Подробнее</div>
-                        <canvas id="conversionByRegions" height="250"></canvas>
+            </div>
+            <div class="container__wrapper conversionByRegions pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title">Эффективность регионов</span>
+                        <button class="btn btn--default" data-link="{{ route('Dashboards.detailedGraph', 'conversion') }}" data-spinner="false">еще</button>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="conversionByRegions" width="1" height="1"></canvas>
+                    </div>
+                    <div class="container__footer"></div>
+                </div>
+            </div>
+            <div class="container__wrapper abcQualifiers pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title center">АВС - квалификация</span>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="abcQualifiers" width="1" height="1"></canvas>
+                    </div>
+                    <div class="container__footer">
+                            <span class="title">С указанием категории: <span id="qualifiedClients">0</span></span>
+                            <span class="title">Без категории: <span id="unqualifiedClients">0</span></span>
                     </div>
                 </div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">ABC-квалификация</h4>
-                        <canvas id="abcQualifiers" height="250"></canvas>
-                        <div class="chart-description">С указанием категории: <strong id="qualifiedClients">0</strong><br>Без категории: <strong id="unqualifiedClients">0</strong></div>
+            </div>
+            <div class="container__wrapper clientSources pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title center">Источники клиентов</span>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="clientSources" width="1" height="1"></canvas>
+                    </div>
+                    <div class="container__footer">
+                        <span class="title">Всего с источниками: <span id="clientsWithSource">0</span></span>
+                        <span class="title">Без источников: <span id="clientsWOSource">0</span></span>
                     </div>
                 </div>
-                    <div class="col-lg-12" style="height:20px;"></div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Источники клиентов</h4>
-                        <canvas id="clientSources" height="250"></canvas>
-                        <div class="chart-description">Всего с источниками: <strong id="clientsWithSource">0</strong><br>Без источников: <strong id="clientsWOSource">0</strong></div>
+            </div>
+            <div class="container__wrapper clientGenders pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title center">Пол клиентов</span>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="clientGenders" width="1" height="1"></canvas>
+                    </div>
+                    <div class="container__footer">
+                        <span class="title">С указанием пола: <span id="clientsWithGender">0</span></span>
+                        <span class="title">Без указания пола:  <span id="clientsWOGender">0</span></span>
                     </div>
                 </div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Пол клиентов</h4>
-                        <canvas id="clientGenders" height="250"></canvas>
-                        <div class="chart-description">С указанием пола: <strong id="clientsWithGender">0</strong><br>Без указания пола: <strong id="clientsWOGender">0</strong></div>
+            </div>
+            <div class="container__wrapper clientAge pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title">Возраст клиентов</span>
+                        <button class="btn btn--default" data-link="{{ route('Dashboards.detailedGraph', 'conversion') }}" data-spinner="false">Подробнее</button>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="clientAge" width="1" height="1"></canvas>
+                    </div>
+                    <div class="container__footer">
+                        <span class="title">С указанием возраста: <span id="clientsWithAge">0</span></span>
+                        <span class="title">Без указания возраста:  <span id="clientsWOAge">0</span></span>
                     </div>
                 </div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Возраст клиентов</h4>
-                        <div class="dashboard-detailed" data-link="{{ route('Dashboards.detailedGraph', 'ages') }}" data-spinner="false">Подробнее</div>
-                        <canvas id="clientAge" height="250"></canvas>
-                        <div class="chart-description">С указанием возраста: <strong id="clientsWithAge">0</strong><br>Без указания возраста: <strong id="clientsWOAge">0</strong></div>
+            </div>
+            <div class="container__wrapper leadsByStatus pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title center">Выполнение плана продаж</span>
                     </div>
-                </div>
-                    <div class="col-lg-12" style="height:20px;"></div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Воронка продаж</h4>
-                        <canvas id="leadsByStatus" height="250"></canvas>
+                    <div class="container__content">
+                        <canvas id="planProgress" width="100" height="90"></canvas>
                     </div>
-                </div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Выполнение плана продаж</h4>
-                        <canvas id="planProgress" height="250"></canvas>
-                        <table style="position: absolute;width: 100%;left: 20px;bottom: 30px;font-size: 8pt;">
+                    <div class="container__footer">
+                        <table>
                             <tr>
-                                <td style="width:110px;">∑ выполнение:</td>
-                                <td style="width:170px;font-weight: bold;" id="planSucceedFrameworks">0</td>
-                                <td style="font-weight: bold;" id="planSucceedSum">0</td>
+                                <td>∑ выполнение:</td>
+                                <td id="planSucceedFrameworks">0</td>
+                                <td id="planSucceedSum">0</td>
                             </tr>
                             <tr>
                                 <td>∑ план:</td>
-                                <td style="font-weight: bold;" id="plannedFrameworks">0</td>
-                                <td style="font-weight: bold;" id="plannedSum">0</td>
+                                <td id="plannedFrameworks">0</td>
+                                <td id="plannedSum">0</td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                <div class="telephonyBlock col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Использование телефонии</h4>
-                        <div class="dashboard-detailed" data-link="{{ route('Dashboards.detailedTelephony') }}" data-spinner="true">Подробнее</div>
-                        <canvas id="telephonyLines" height="250"></canvas>
-                        <div class="chart-description">Входящих за период: <strong id="telUsageIncoming">0</strong><br>Исходящих за период: <strong id="telUsageOutgoing">0</strong></div>
+            </div>
+            <div class="container__wrapper planProgress pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title center">Воронка продаж</span>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="leadsByStatus" width="1" height="1"></canvas>
                     </div>
                 </div>
-                    <div class="telephonyBlock col-lg-12" style="height:20px;"></div>
-                <div class="col-md-4" style="min-height:422px;">
-                    <div class="dashboard-short-block">
-                        <h4 style="margin-bottom:15px;text-align:center;">Забракованные лиды</h4>
-                        <div class="dashboard-detailed" data-link="{{ route('Dashboards.detailedGraph', 'rejected') }}" data-spinner="true">Подробнее</div>
-                        <canvas id="rejectedLeads" height="250"></canvas>
+            </div>
+            <div class="container__wrapper rejectedLeads pure-u-1-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title">Забракованные лиды</span>
+                        <button class="btn btn--default" data-link="{{ route('Dashboards.detailedGraph', 'conversion') }}" data-spinner="false">еще</button>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="rejectedLeads" width="1" height="1"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="container__wrapper telephonyLines pure-u-2-3">
+                <div class="container">
+                    <div class="container__head">
+                        <span class="title">Использование телефонии</span>
+                    </div>
+                    <div class="container__content">
+                        <canvas id="telephonyLines" width="250" height="100"></canvas>
+                    </div>
+                    <div class="container__footer">
+                        <span class="title">Входящих за период: <span id="telUsageIncoming">0</span></span>
+                        <span class="title">Исходящих за период: <span id="telUsageOutgoing">0</span></span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 <div id="pleaseWait" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document" style="width:auto;">
@@ -198,6 +274,7 @@
 @endsection
 
 @section('tmp_js')
+    <script type="text/javascript" src="{{ asset('js/bootstrap-multiselect.js ') }}"></script>
     <script src="/js/chartjs-labels.js"></script>
     <script>
 
@@ -207,21 +284,30 @@
             }
         });
 
-        $('.multiselect-ui').multiselect({
-            includeSelectAllOption: false,
-            enableFiltering: false,
-            defaultChecked: true,
-            nonSelectedText: 'Выбрать',
-            selectAllText: 'Все',
-            allSelectedText: 'Все'
-        });
-
-        $('.dashboard-detailed').click(function(){
+        $('.btn.btn--default').click(function(){
             if($(this).attr('data-spinner') == "true"){
                 $('#pleaseWait').modal('show');
             }
             window.location.href = $(this).attr('data-link');
         });
+
+        var draw = Chart.controllers.doughnut.prototype.draw;
+            Chart.controllers.doughnut = Chart.controllers.doughnut.extend({
+            draw: function() {
+                draw.apply(this, arguments);
+                let ctx = this.chart.chart.ctx;
+                let _fill = ctx.fill;
+                ctx.fill = function() {
+                    ctx.save();
+                    ctx.shadowColor = 'black';
+                    ctx.shadowBlur = 4;
+                    ctx.shadowOffsetX = 1;
+                    ctx.shadowOffsetY = 1;
+                    _fill.apply(this, arguments)
+                    ctx.restore();
+                }
+            }
+    });
 
         let init = {
             id: [],
@@ -252,6 +338,7 @@
                         buildType: 'all'
                     },
                     success: function(data) {
+                        
 
                         init.id = [];                        init.conversions = [];                  init.names = [];
                         init.done = [];                      init.all = [];                          init.coleurs = [];
@@ -275,7 +362,8 @@
                         buildPlanProcessChart(data.plan);                   buildRejectedChart(data);
 
                         $('#pleaseWait').modal('hide');
-
+                        
+                       
                     }
                 });
             }
@@ -284,16 +372,16 @@
         let doneData = {
             label: 'Оплачено',
             data: [],
-            borderWidth: 2,
+            borderWidth: 0,
             hoverBorderWidth: 0,
-            backgroundColor: 'rgba(13,153,89,0.6)'
+            backgroundColor: '#376971'
         };
         let allData = {
             label: 'Не оплачено',
             data: [],
-            borderWidth: 2,
+            borderWidth: 0,
             hoverBorderWidth: 0,
-            backgroundColor: 'rgba(17,120,153, .6)'
+            backgroundColor: '#57ACBD'
         };
         let chartOptions = {
             scales: {
@@ -338,15 +426,15 @@
                 datasets: [
                     {
                         label: 'Выполнение',
-                        backgroundColor: 'rgba(13,153,89,0.6)',
-                        borderWidth: 2,
+                        backgroundColor: '#376971',
+                        borderWidth: 0,
                         hoverBorderWidth: 0,
                         data: []
                     }, 
                     {
                         label: 'План',
-                        backgroundColor: 'rgba(17,120,153, .6)',
-                        borderWidth: 2,
+                        backgroundColor: '#57ACBD',
+                        borderWidth: 0,
                         hoverBorderWidth: 0,
                         data: []
                     }
@@ -362,7 +450,7 @@
         var abcQualifiersPie = new Chart(
             ctxABC,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [
@@ -370,10 +458,11 @@
                             init.abc2,
                             init.abc3
                         ],
+                        borderWidth: 0,
                         backgroundColor: [
-                            'rgba(13,153,89,0.6)',
-                            'rgba(17,120,153,0.6)',
-                            'rgba(46,197,120,0.6)'
+                            '#3A6D75',
+                            '#4D96A3',
+                            '#BCDAE1',
                         ],
                         label: 'Dataset 1'
                     }],
@@ -383,6 +472,14 @@
                 },
                 options: {
                     responsive: true,
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     plugins: {
                         labels: {
                             render: 'percentage',
@@ -408,17 +505,39 @@
         var clientSourcesPie = new Chart(
             ctxSrc,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [],
-                        backgroundColor: [],
+                        borderWidth: 0,
+                        backgroundColor: [
+                            '#DEF6FC',
+                            '#BCDAE1',
+                            '#99CFD8',
+                            '#9AE0EC',
+                            '#43BDD7',
+                            '#4D96A3',
+                            '#396C74',
+                            '#4E7981',
+                            '#4B5254',
+                        ],
                         label: 'Dataset 1'
                     }],
                     labels: []
                 },
                 options: {
+                    cutoutPercentage: 50,
+                    rotation: -3.141592653589793,
+                    circumference: 3.141592653589793,
                     responsive: true,
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     legend : {
                         fullWidth: true,
                         labels: {
@@ -451,13 +570,14 @@
         var clientGendersPie = new Chart(
             ctxGnd,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [ 0, 0 ],
+                        borderWidth: 0,
                         backgroundColor: [
-                            'rgba(13,153,89,0.6)',
-                            'rgba(17,120,153,0.6)'
+                            '#84959A',
+                            '#3A6D75'
                         ],
                         label: 'Dataset 1'
                     }],
@@ -468,6 +588,14 @@
                 },
                 options: {
                     responsive: true,
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     plugins: {
                         labels: {
                             render: 'percentage',
@@ -493,10 +621,11 @@
         var clientAgesPie = new Chart(
             ctxAge,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [],
+                        borderWidth: 0,
                         backgroundColor: [],
                         label: 'Dataset 1'
                     }],
@@ -504,6 +633,14 @@
                 },
                 options: {
                     responsive: true,
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     plugins: {
                         labels: {
                             render: 'percentage',
@@ -529,15 +666,31 @@
         var conversionRegionsPie = new Chart(
             ctxCR,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [],
-                        backgroundColor: []
+                        borderWidth: 0,
+                        backgroundColor:  [
+                                'rgba(172, 231, 249, 0.75)',
+                                'rgba(1, 210, 240, 0.75)',
+                                'rgba(57, 72, 95, 0.75)',
+                                'rgba(31, 44, 78, 0.75)',
+                                'rgba(253, 111, 117, 0.75)',
+                                'rgba(255, 144, 153, 0.75)'
+                        ],
                     }],
                     labels: []
                 },
                 options: {
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     responsive: true,
                     legend : {
                         fullWidth: true,
@@ -571,17 +724,18 @@
         var leadsByStatusPie = new Chart(
             ctxLeads,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [],
+                        borderWidth: 0,
                         backgroundColor: [
-                            'rgba(172, 231, 249, 0.75)',
-                            'rgba(1, 210, 240, 0.75)',
-                            'rgba(57, 72, 95, 0.75)',
-                            'rgba(31, 44, 78, 0.75)',
-                            'rgba(253, 111, 117, 0.75)',
-                            'rgba(255, 144, 153, 0.75)'
+                            '#77C5D2',
+                            '#3DAFC7',
+                            '#54A1B1',
+                            '#438792',
+                            '#366971',
+                            '#666666'
                         ],
                         label: 'Dataset 1'
                     }],
@@ -589,6 +743,14 @@
                 },
                 options: {
                     responsive: true,
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     legend : {
                         fullWidth: true,
                         labels: {
@@ -625,19 +787,28 @@
                 data: {
                     datasets: [{
                         data: [],
+                        borderWidth: 0,
                         backgroundColor: [
-                            'rgba(172, 231, 249, 0.75)',
-                            'rgba(1, 210, 240, 0.75)',
-                            'rgba(57, 72, 95, 0.75)',
-                            'rgba(31, 44, 78, 0.75)',
-                            'rgba(253, 111, 117, 0.75)',
-                            'rgba(255, 144, 153, 0.75)'
+                            '#77C5D2',
+                            '#3DAFC7',
+                            '#54A1B1',
+                            '#438792',
+                            '#366971',
+                            '#666666'
                         ],
                         label: 'Dataset 1'
                     }],
                     labels: ['Новый', 'Обработка', 'Замер', 'Предложение', 'Выставлен счет', 'Оплачен']
                 },
                 options: {
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     responsive: true,
                     legend : {
                         fullWidth: true,
@@ -678,15 +849,17 @@
                         label: 'Входящие',
                         fill: false,
                         yAxisID: 'y-axis-1',
-                        backgroundColor: 'rgba(67, 184, 61, 0.6)',
-                        borderColor: 'rgba(67, 184, 61, 0.6)',
+                        borderWidth: 0,
+                        backgroundColor: '#5EA7B7',
+                        borderColor: '#5EA7B7',
                         data: []
                     }, {
                         label: 'Исходящие',
                         fill: false,
                         yAxisID: 'y-axis-1',
-                        backgroundColor: 'rgba(61, 122, 184, 0.6)',
-                        borderColor: 'rgba(61, 122, 184, 0.6)',
+                        borderWidth: 0,
+                        backgroundColor: '#3A6D75',
+                        borderColor: '#3A6D75',
                         data: []
                     }]
                 },
@@ -726,20 +899,29 @@
         var rejectedLeadsPie = new Chart(
             ctxRejected,
             {
-                type: 'pie',
+                type: 'doughnut',
                 data: {
                     datasets: [{
                         data: [],
+                        borderWidth: 0,
                         backgroundColor: [
-                            'rgba(172, 231, 249, 0.75)',
-                            'rgba(1, 210, 240, 0.75)',
-                            'rgba(57, 72, 95, 0.75)'
+                            '#3A6D75',
+                            '#4D96A3',
+                            '#BCDAE1'
                         ],
                         label: 'Dataset 1'
                     }],
                     labels: ['Потенциальные', 'Оплаченные', 'Забракованные']
                 },
                 options: {
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            left: 10,
+                            top: 10,
+                            right: 10
+                        }
+                    },
                     responsive: true,
                     legend : {
                         fullWidth: true,
@@ -765,6 +947,18 @@
                 }
             }
         );
+
+        let colorList = [
+                            '#DEF6FC',
+                            '#BCDAE1',
+                            '#99CFD8',
+                            '#9AE0EC',
+                            '#43BDD7',
+                            '#4D96A3',
+                            '#396C74',
+                            '#4E7981',
+                            '#4B5254',
+                        ]
 
         /*
             Построение и обновление забракованных лидов
@@ -809,7 +1003,7 @@
         async function buildAgesCharts(data){
             init.cagesLabels = [ '<20', '20-30', '30-45', '45-60', '>60' ];
             init.cagesData = [ 0, 0, 0, 0, 0 ];
-            init.cagesColeurs = []
+            init.cagesColeurs = ['#4B5254', '#396C74', '#4D96A3',  '#40B7D0',  '#8CD8E5']
             data.ages.forEach(function(item){
                 if($.isNumeric(item.age)){
                     if(item.age < 20){
@@ -830,9 +1024,9 @@
             });
             clientAgesPie.data.labels = init.cagesLabels;
             clientAgesPie.data.datasets[0].data = init.cagesData;
-            init.cagesLabels.forEach(function(inner){
-                init.cagesColeurs.push('rgb(' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',0.6)');
-            });
+            // init.cagesLabels.forEach(function(inner){
+            //     init.cagesColeurs.push('rgb(' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',0.6)');
+            // });
             clientAgesPie.data.datasets[0].backgroundColor = init.cagesColeurs;
             clientAgesPie.update();
         }
@@ -890,10 +1084,11 @@
 
             conversionRegionsPie.data.datasets[0].data = init.rmDetailsCount;
             conversionRegionsPie.data.labels = init.rmDetailsLabels;
-            init.rmDetailsLabels.forEach(function(inner){
-                init.coleurs.push('rgb(' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',0.6)');
-            });
-            conversionRegionsPie.data.datasets[0].backgroundColor = init.coleurs;
+            // init.rmDetailsLabels.forEach(function(inner){
+            //     init.coleurs.push('rgb(' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',0.6)');
+            // });
+            conversionRegionsPie.data.datasets[0].backgroundColor = [  '#666666', '#3A6D75', '#4D96A3', '#43BDD7', '#8CD8E5', '#BCDAE1' ];
+            
             conversionRegionsPie.update();
         }
 
@@ -916,7 +1111,7 @@
             init.csourcesLabels.forEach(function(inner){
                 init.csourcesColeurs.push('rgb(' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',' + Math.floor((Math.random() * 256)) + ',0.6)');
             });
-            clientSourcesPie.data.datasets[0].backgroundColor = init.csourcesColeurs;
+            clientSourcesPie.data.datasets[0].backgroundColor = [  '#666666', '#BCDAE1', '#99CFD8', '#9AE0EC', '#43BDD7',  '#4D96A3', '#396C74', '#4E7981', '#4B5254' ];
             clientSourcesPie.update();
         }
 

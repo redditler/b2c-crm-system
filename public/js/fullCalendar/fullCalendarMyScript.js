@@ -36,9 +36,24 @@ $(document).ready(function () {
 
             for (let i in data) {
                 if (data[i].id == $(this).attr('href')) {
-                    $('#showAnchorFullCalendarHeader').html(`<h3 class="modal-title">Задачу поставил: ${data[i].from_users ? data[i].from_users.name : 'Не назначен'}</h3>`);
-                    $('#showAnchorFullCalendarContent').html(`<div class=row>Исполнитель: ${data[i].users.name}  <br/> ${data[i].title} ${data[i].url ? ' <a href="/contact/' + data[i].url + '/edit">Перейти</a>' : ''}</div><br/>
-                                                                    <div class="row"><button class="btn btn-danger eventDelete" value="${data[i].id}">Удалить</button ></div>`);
+                    $('#showAnchorFullCalendarHeader').html(`
+                        <h3 class="modal-title">
+                            <span class="user-title">Задачу поставил: </span> 
+                            <span class="user-secription">${data[i].from_users ? data[i].from_users.name : 'Не назначен'}</span>
+                        </h3>`);
+
+                    $('#showAnchorFullCalendarContent').html(`
+                        <div class=content_wrapper>
+                            <span class="manager-title">Исполнитель:</span><span class="manager-subtitle"> ${data[i].users.name}</span>
+                            <p class="event-title">${data[i].title}</p>
+                            ${data[i].url ? ' <a href="/contact/' + data[i].url + '/edit">Перейти</a>' : ''}
+                        </div>`);
+
+                    $('#showEventControl').html(`
+                        <button class="btn btn--default blue eventDelete" value="${data[i].id}">Удалить</button > 
+                        <button type="button" class="btn btn--default" data-dismiss="modal" id="showEventClose">Закрыть</button>`
+                    );
+
                     $('.eventDelete').click(function (e) {
                         e.preventDefault();
                         $.ajax({
@@ -46,7 +61,11 @@ $(document).ready(function () {
                             method: 'delete',
                             success: function (result) {
                                 if (!Array.isArray(result)) {
-                                    alert(result);
+                                    let note = new Notes({
+                                        status: 'success',
+                                        content: 'Заметка удалена!',
+                                        timer: '2000'
+                                    }).create();
                                     $('#showEventClose').click();
                                     renderCalendar();
                                 }
@@ -113,21 +132,26 @@ $(document).ready(function () {
         })
     }
 
-    $('#setEvent').on('submit', function (e) {
-        e.preventDefault();
-
+    $('#sendEventBtn').on('click', function () {
         $.ajax({
             url: '/events',
             method: `post`,
             data: $('#setEvent').serializeArray(),
             success: function (result) {
                 if (!Array.isArray(result)) {
-                    $('#addEventFullCalendarClose').click();
-                    $('#setEvent').trigger('reset');
+                    let note = new Notes({
+                        status: 'success',
+                        content: 'Заметка добавленна',
+                        timer: '2000'
+                    }).create();
                     renderCalendar();
-                    alert(result);
+                    $('#closeEventModal').click();
                 } else {
-                    alert(result);
+                    let note = new Notes({
+                        status: 'success',
+                        content: result,
+                        timer: '2000'
+                    }).create();
                 }
             }
         });
@@ -141,13 +165,6 @@ $(document).ready(function () {
         e.preventDefault();
 
         renderCalendar();
-        // let data = {
-        //     group_id: $('#leadGroupSelector').val(),
-        //     regionManager_id: $('#leadRegionManagerSelector').val(),
-        //     salon_id: $('#leadSalon').val(),
-        //     user_id: $('#leadManagerSelector').val()
-        // }
-        // console.log(data)
     })
 
 });

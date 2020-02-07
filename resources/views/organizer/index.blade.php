@@ -108,8 +108,6 @@
 			        center: 'title',
 			        right: 'dayGridMonth,timeGridWeek,timeGridDay'
 				},
-				prev: 'fa-angle-right',
-  				next: 'fa-angle-right',
 			    editable: true,
 			    navLinks: true,
 			    locale: 'ru',
